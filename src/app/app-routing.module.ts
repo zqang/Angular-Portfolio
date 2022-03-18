@@ -14,6 +14,10 @@ const routes: Routes = [
     loadChildren: () => import('./module/portfolio/portfolio.module').then(m => m.PortfolioModule)
   },
   {
+    path: 'blog',
+    loadChildren: () => import('./module/blog/blog.module').then(m => m.BlogModule)
+  },
+  {
     path: '**',
     resolve: {
       path: PathResolveService
