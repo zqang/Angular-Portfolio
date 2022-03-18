@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NotFoundPageComponent } from './core/static-page/not-found-page/not-found-page.component';
+import { PathResolveService } from './path-resolve.service';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -10,6 +12,13 @@ const routes: Routes = [
   {
     path: 'portfolio',
     loadChildren: () => import('./module/portfolio/portfolio.module').then(m => m.PortfolioModule)
+  },
+  {
+    path: '**',
+    resolve: {
+      path: PathResolveService
+    },
+    component: NotFoundPageComponent
   }
 ];
 

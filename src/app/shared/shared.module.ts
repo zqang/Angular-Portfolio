@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ZorroModule } from './zorro.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -12,12 +13,14 @@ import { ZorroModule } from './zorro.module';
     CommonModule,
     FormsModule,
     HttpClientModule,
+    RouterModule
   ],
   exports: [
     CommonModule,
     FormsModule,
     HttpClientModule,
-    ZorroModule
+    ZorroModule,
+    RouterModule
   ]
 })
 export class SharedModule { }
