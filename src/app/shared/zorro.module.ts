@@ -6,7 +6,8 @@ import { NzSpaceModule } from 'ng-zorro-antd/space';
 import { NzImageModule } from 'ng-zorro-antd/image';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
-
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzTimelineModule } from 'ng-zorro-antd/timeline';
 
 @NgModule({
   declarations: [],
@@ -17,7 +18,9 @@ import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
     NzSpaceModule,
     NzImageModule,
     NzGridModule,
-    NzPageHeaderModule
+    NzPageHeaderModule,
+    NzCardModule,
+    NzTimelineModule,
   ],
   exports: [
     NzLayoutModule,
@@ -26,7 +29,9 @@ import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
     NzSpaceModule,
     NzImageModule,
     NzGridModule,
-    NzPageHeaderModule
+    NzPageHeaderModule,
+    NzCardModule,
+    NzTimelineModule,
   ]
 })
 export class ZorroModule { }
