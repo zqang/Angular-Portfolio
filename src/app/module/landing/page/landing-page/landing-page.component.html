@@ -1,11 +1,52 @@
-<p>landing-page works!</p>
+<section>
+  <div nz-row>
+    <div nz-col nzSpan="12">
+      <nz-space [nzSize]="12">
+        <img *nzSpaceItem nz-image width="400px" height="400px" [nzSrc]="src" [nzPlaceholder]="placeholder" />
+      </nz-space>
+    </div>
+    <div nz-col nzSpan="12">
+      <h2>Hi, I am Alvin !</h2>
+    </div>
+  </div>
+</section>
 
-<h1>{{test}}</h1>
+<app-about-me></app-about-me>
 
-<div>
-  <a routerLink="/portfolio">portfolio</a>
-</div>
 
-<div>
-  <button (click)="onClick()">Change</button>
-</div>
+<section>
+  <div nz-row>
+    <h2>Skills</h2>
+  </div>
+  <div nz-row>
+    <h2>Qualifications</h2>
+  </div>
+</section>
+
+<section>
+  <div nz-row>
+    <h2>Services - What i offer</h2>
+  </div>
+</section>
+
+<section>
+  <div nz-row>
+    <h2>Portfolio - most recent work</h2>
+  </div>
+</section>
+
+<section>
+  <div nz-row>
+    <h2>Blog</h2>
+  </div>
+  <div nz-row>
+    <p>Recent posts</p>
+  </div>
+</section>
+
+<section>
+  <div nz-row>
+    <h2>Contact me</h2>
+  </div>
+</section>
+
