@@ -8,6 +8,7 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzTimelineModule } from 'ng-zorro-antd/timeline';
+import { NzAnchorModule } from 'ng-zorro-antd/anchor';
 
 @NgModule({
   declarations: [],
@@ -21,6 +22,7 @@ import { NzTimelineModule } from 'ng-zorro-antd/timeline';
     NzPageHeaderModule,
     NzCardModule,
     NzTimelineModule,
+    NzAnchorModule,
   ],
   exports: [
     NzLayoutModule,
@@ -32,6 +34,7 @@ import { NzTimelineModule } from 'ng-zorro-antd/timeline';
     NzPageHeaderModule,
     NzCardModule,
     NzTimelineModule,
+    NzAnchorModule,
   ]
 })
 export class ZorroModule { }

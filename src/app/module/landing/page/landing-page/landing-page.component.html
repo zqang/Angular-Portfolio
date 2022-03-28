@@ -1,48 +1,70 @@
-<section>
-  <div nz-row>
-    <div nz-col nzSpan="12">
-      <nz-space [nzSize]="12">
-        <img *nzSpaceItem nz-image width="400px" height="400px" [nzSrc]="src" [nzPlaceholder]="placeholder" />
-      </nz-space>
+<nz-layout>
+  <nz-sider>sider</nz-sider>
+  <nz-content>
+    <section id="summary">
+      <div nz-row>
+        <div nz-col nzSpan="12">
+          <nz-space [nzSize]="12">
+            <img *nzSpaceItem nz-image width="400px" height="400px" [nzSrc]="src" [nzPlaceholder]="placeholder" />
+          </nz-space>
+        </div>
+        <div nz-col nzSpan="12">
+          <app-career-summary></app-career-summary>
+        </div>
+      </div>
+    </section>
+
+    <div id="about">
+      <app-about-me></app-about-me>
     </div>
-    <div nz-col nzSpan="12">
-      <app-career-summary></app-career-summary>
+
+    <div id="skill">
+      <app-skills></app-skills>
     </div>
-  </div>
-</section>
 
-<app-about-me></app-about-me>
+    <div id="qualification">
+      <app-qualifications></app-qualifications>
+    </div>
 
-<app-skills></app-skills>
+    <section id="portfolio">
+      <div nz-row>
+        <h2>Portfolio - most recent work</h2>
+      </div>
+    </section>
 
-<app-qualifications></app-qualifications>
+    <section id="blog">
+      <div nz-row>
+        <h2>Blog</h2>
+      </div>
+      <div nz-row>
+        <p>Recent posts</p>
+      </div>
+    </section>
 
-<section>
-  <div nz-row>
-    <h2>Portfolio - most recent work</h2>
-  </div>
-</section>
+    <section>
+      <div nz-row id="contact">
+        <h2>Contact me</h2>
+      </div>
+      <div>
+        <ul>
+          <li>Whatsapp</li>
+          <li>Facebook</li>
+          <li>LinkedIn</li>
+          <li>Github</li>
+        </ul>
+      </div>
+    </section>
+  </nz-content>
 
-<section>
-  <div nz-row>
-    <h2>Blog</h2>
-  </div>
-  <div nz-row>
-    <p>Recent posts</p>
-  </div>
-</section>
-
-<section>
-  <div nz-row>
-    <h2>Contact me</h2>
-  </div>
-  <div>
-    <ul>
-      <li>Whatsapp</li>
-      <li>Facebook</li>
-      <li>LinkedIn</li>
-      <li>Github</li>
-    </ul>
-  </div>
-</section>
-
+  <nz-sider>
+    <nz-anchor nzOffsetTop="100">
+      <nz-link nzHref="#summary" nzTitle="Home"></nz-link>
+      <nz-link nzHref="#about" nzTitle="About Me"></nz-link>
+      <nz-link nzHref="#skill" nzTitle="Skills"></nz-link>
+      <nz-link nzHref="#qualification" nzTitle="Qualifications"></nz-link>
+      <nz-link nzHref="#portfolio" nzTitle="Portfolio"></nz-link>
+      <nz-link nzHref="#blog" nzTitle="Blog"></nz-link>
+      <nz-link nzHref="#contact" nzTitle="Contact Me"></nz-link>
+    </nz-anchor>
+  </nz-sider>
+</nz-layout>
