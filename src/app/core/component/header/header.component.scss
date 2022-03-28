@@ -4,7 +4,8 @@
   float: left;
 
   h2{
-    font-size: small;
+    font-size: medium;
+    color: white;
   }
 }
 
@@ -16,4 +17,8 @@ nz-header {
   position: fixed;
   width: 100%;
   background-color: white;
+}
+
+li.ant-menu-item.ant-menu-item-selected{
+  background-color: transparent;
 }
