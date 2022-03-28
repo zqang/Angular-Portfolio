@@ -6,14 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./landing-page.component.scss']
 })
 export class LandingPageComponent implements OnInit {
-  test: number = 0;
+
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  onClick(){
-    this.test = this.test + 32;
   }
 
 }

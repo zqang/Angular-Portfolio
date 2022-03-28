@@ -8,7 +8,8 @@ import { RouterModule } from '@angular/router';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+  ],
   imports: [
     CommonModule,
     FormsModule,
@@ -20,7 +21,7 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     HttpClientModule,
     ZorroModule,
-    RouterModule
+    RouterModule,
   ]
 })
 export class SharedModule { }
