@@ -9,6 +9,8 @@ import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzTimelineModule } from 'ng-zorro-antd/timeline';
 import { NzAnchorModule } from 'ng-zorro-antd/anchor';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 
 @NgModule({
   declarations: [],
@@ -23,6 +25,8 @@ import { NzAnchorModule } from 'ng-zorro-antd/anchor';
     NzCardModule,
     NzTimelineModule,
     NzAnchorModule,
+    NzListModule,
+    NzAvatarModule,
   ],
   exports: [
     NzLayoutModule,
@@ -35,6 +39,8 @@ import { NzAnchorModule } from 'ng-zorro-antd/anchor';
     NzCardModule,
     NzTimelineModule,
     NzAnchorModule,
+    NzListModule,
+    NzAvatarModule,
   ]
 })
 export class ZorroModule { }

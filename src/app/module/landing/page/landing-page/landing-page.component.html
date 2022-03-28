@@ -1,5 +1,21 @@
 <nz-layout>
-  <nz-sider>sider</nz-sider>
+
+
+  <!-- <nz-sider>
+    <nz-avatar nzIcon="user" nzSrc="" [nzSize]="128" [nzSrc]="src"></nz-avatar>
+    <nz-list nzSize="small">
+      <div nz-row id="contact">
+        <h2>Contact me</h2>
+      </div>
+      <div nz-row *ngFor="let item of data">
+        <nz-list-item>
+          <span>{{item.title}}</span>
+        </nz-list-item>
+      </div>
+    </nz-list>
+  </nz-sider> -->
+
+
   <nz-content>
     <section id="summary">
       <div nz-row>
@@ -40,21 +56,8 @@
         <p>Recent posts</p>
       </div>
     </section>
-
-    <section>
-      <div nz-row id="contact">
-        <h2>Contact me</h2>
-      </div>
-      <div>
-        <ul>
-          <li>Whatsapp</li>
-          <li>Facebook</li>
-          <li>LinkedIn</li>
-          <li>Github</li>
-        </ul>
-      </div>
-    </section>
   </nz-content>
+
 
   <nz-sider>
     <nz-anchor nzOffsetTop="100">
@@ -67,4 +70,6 @@
       <nz-link nzHref="#contact" nzTitle="Contact Me"></nz-link>
     </nz-anchor>
   </nz-sider>
+
+
 </nz-layout>
