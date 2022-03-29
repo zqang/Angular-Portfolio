@@ -11,6 +11,8 @@ import { NzTimelineModule } from 'ng-zorro-antd/timeline';
 import { NzAnchorModule } from 'ng-zorro-antd/anchor';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzProgressModule } from 'ng-zorro-antd/progress';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
 
 @NgModule({
   declarations: [],
@@ -27,6 +29,8 @@ import { NzAvatarModule } from 'ng-zorro-antd/avatar';
     NzAnchorModule,
     NzListModule,
     NzAvatarModule,
+    NzProgressModule,
+    NzTabsModule
   ],
   exports: [
     NzLayoutModule,
@@ -41,6 +45,8 @@ import { NzAvatarModule } from 'ng-zorro-antd/avatar';
     NzAnchorModule,
     NzListModule,
     NzAvatarModule,
+    NzProgressModule,
+    NzTabsModule
   ]
 })
 export class ZorroModule { }

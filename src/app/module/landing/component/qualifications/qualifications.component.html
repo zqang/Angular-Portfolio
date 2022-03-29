@@ -1,9 +1,18 @@
 <app-section-title-layout [title]="title">
-  <nz-timeline nzMode="alternate">
-    <nz-timeline-item nzLabel="2012">UPSR exam (Straight A)</nz-timeline-item>
-    <nz-timeline-item nzLabel="2015">PT3 exam 8A 2B</nz-timeline-item>
-    <nz-timeline-item nzLabel="2017">SPM exam 7A+ 1A 1A- 1B</nz-timeline-item>
-    <nz-timeline-item nzLabel="2019-03">PSPM exam 4.00 (matriculation)</nz-timeline-item>
-    <nz-timeline-item nzLabel="2019-09">Enrolled in University Malaya</nz-timeline-item>
-  </nz-timeline>
+  <nz-tabset nzCentered nzSize="large">
+    <nz-tab nzTitle="Study">
+      <nz-timeline nzMode="alternate">
+        <nz-timeline-item nzLabel="2012">UPSR exam (Straight A)</nz-timeline-item>
+        <nz-timeline-item nzLabel="2015">PT3 exam 8A 2B</nz-timeline-item>
+        <nz-timeline-item nzLabel="2017">SPM exam 7A+ 1A 1A- 1B</nz-timeline-item>
+        <nz-timeline-item nzLabel="2019-03">PSPM exam 4.00 (matriculation)</nz-timeline-item>
+        <nz-timeline-item nzLabel="2019-09">Enrolled in University Malaya</nz-timeline-item>
+      </nz-timeline>
+    </nz-tab>
+    <nz-tab nzTitle="Work">
+      <nz-timeline nzMode="alternate" [nzPending]=true>
+        <nz-timeline-item nzLabel="2021-07">Intern at IFast Capital Sdn. Bhd. (six months)</nz-timeline-item>
+      </nz-timeline>
+    </nz-tab>
+  </nz-tabset>
 </app-section-title-layout>

@@ -1,30 +1,57 @@
 <app-section-title-layout [title]="title">
   <div style="padding:30px;">
-    <div nz-row [nzGutter]="8">
+    <div class="body-font" nz-row [nzGutter]="8">
       <div nz-col [nzSpan]="8">
         <nz-card nzTitle="Frontend Dev">
           <ol>
-            <li>Angular</li>
-            <li>React</li>
-            <li>State management</li>
+            <li>
+              Angular
+              <nz-progress nzStrokeColor="violet" [nzPercent]="70" nzStatus="active"></nz-progress>
+            </li>
+            <li>
+              React
+              <nz-progress nzStrokeColor="red" [nzPercent]="50" nzStatus="active"></nz-progress>
+            </li>
+            <li>
+              State management
+              <nz-progress nzStrokeColor="green" [nzPercent]="70" nzStatus="active"></nz-progress>
+            </li>
           </ol>
         </nz-card>
       </div>
       <div nz-col [nzSpan]="8">
         <nz-card nzTitle="Backend Dev">
           <ol>
-            <li>Java Spring</li>
-            <li>Nodejs</li>
-            <li>SQL query</li>
+            <li>
+              Java Spring
+              <nz-progress nzStrokeColor="green" [nzPercent]="50" nzStatus="active"></nz-progress>
+            </li>
+            <li>
+              Nodejs
+              <nz-progress nzStrokeColor="green" [nzPercent]="30" nzStatus="active"></nz-progress>
+            </li>
+            <li>
+              SQL query
+              <nz-progress nzStrokeColor="green" [nzPercent]="80" nzStatus="active"></nz-progress>
+            </li>
           </ol>
         </nz-card>
       </div>
       <div nz-col [nzSpan]="8">
         <nz-card nzTitle="Artificial Intelligence">
           <ol>
-            <li>Machine Learning</li>
-            <li>NLP</li>
-            <li>Reinforcement Learning</li>
+            <li>
+              Machine Learning
+              <nz-progress nzStrokeColor="green" [nzPercent]="80" nzStatus="active"></nz-progress>
+            </li>
+            <li>
+              NLP
+              <nz-progress nzStrokeColor="green" [nzPercent]="50" nzStatus="active"></nz-progress>
+            </li>
+            <li>
+              Reinforcement Learning
+              <nz-progress nzStrokeColor="green" [nzPercent]="40" nzStatus="active"></nz-progress>
+            </li>
           </ol>
         </nz-card>
       </div>
