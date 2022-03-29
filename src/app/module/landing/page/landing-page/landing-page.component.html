@@ -20,12 +20,12 @@
     <section id="summary">
       <div nz-row>
         <div nz-col nzSpan="12">
-          <nz-space [nzSize]="12">
-            <img *nzSpaceItem nz-image width="400px" height="400px" [nzSrc]="src" [nzPlaceholder]="placeholder" />
-          </nz-space>
+          <app-career-summary></app-career-summary>
         </div>
         <div nz-col nzSpan="12">
-          <app-career-summary></app-career-summary>
+          <nz-space [nzSize]="12">
+            <img *nzSpaceItem nz-image width="500px" height="500px" [nzSrc]="src" [nzPlaceholder]="placeholder" />
+          </nz-space>
         </div>
       </div>
     </section>
@@ -44,18 +44,32 @@
 
     <section id="portfolio">
       <div nz-row>
-        <h2>Portfolio - most recent work</h2>
+        <h2 class="title-font">Portfolio - most recent work</h2>
       </div>
     </section>
 
     <section id="blog">
       <div nz-row>
-        <h2>Blog</h2>
+        <h2 class="title-font">Blog</h2>
       </div>
       <div nz-row>
-        <p>Recent posts</p>
+        <p class="body-font">Recent posts</p>
       </div>
     </section>
+
+    <section id="contact">
+      <nz-list nzSize="small">
+        <div nz-row id="contact">
+          <h2 class="title-font">Contact me</h2>
+        </div>
+        <div nz-row *ngFor="let item of data">
+          <nz-list-item>
+            <span class="body-font">{{item.title}}</span>
+          </nz-list-item>
+        </div>
+      </nz-list>
+    </section>
+
   </nz-content>
 
 
