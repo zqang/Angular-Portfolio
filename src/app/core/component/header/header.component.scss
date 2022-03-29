@@ -14,20 +14,18 @@
 nz-header {
   width: 100%;
   padding: 0;
+  background-color: white;
 }
 
 .menu-list{
   font-size: 18px;
 
   li{
-    float: right;
-    margin-right: 20px;
+    font-weight: 600;
+
   }
 }
 
-.space{
-  background-color: black;
-}
 // li.ant-menu-item.ant-menu-item-selected{
 //   background-color: transparent;
 //   color: black;

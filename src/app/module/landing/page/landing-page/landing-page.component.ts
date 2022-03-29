@@ -8,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class LandingPageComponent implements OnInit {
   title = "About Me"
   src = "/assets/fbprofilepic-removebg.png";
-  placeholder =
-    '/assets/fbprofilepic-removebg.png?x-oss-process=image/blur,r_50,s_50/quality,q_1/resize,m_mfit,h_200,w_200';
+  srcBlob = "/assets/blob.svg";
+  placeholder ='/assets/fbprofilepic-removebg.png?x-oss-process=image/blur,r_50,s_50/quality,q_1/resize,m_mfit,h_200,w_200';
+  placeholderBlob ='/assets/blob.svg?x-oss-process=image/blur,r_50,s_50/quality,q_1/resize,m_mfit,h_200,w_200';
+
+
 
     data = [
       {

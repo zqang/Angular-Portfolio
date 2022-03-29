@@ -17,38 +17,37 @@
 
 
   <nz-content>
-    <section id="summary">
+    <section id="summary" class="section">
       <div nz-row>
-        <div nz-col nzSpan="12">
-          <app-career-summary></app-career-summary>
+        <div nz-col nzSpan="12" class="image">
+          <img class="blob" nz-image width="800px" height="800px" [nzSrc]="srcBlob" [nzPlaceholder]="placeholderBlob" />
+          <img class="profile-pic" nz-image width="800px" height="800px" [nzSrc]="src" [nzPlaceholder]="placeholder" />
         </div>
         <div nz-col nzSpan="12">
-          <nz-space [nzSize]="12">
-            <img *nzSpaceItem nz-image width="500px" height="500px" [nzSrc]="src" [nzPlaceholder]="placeholder" />
-          </nz-space>
+          <app-career-summary></app-career-summary>
         </div>
       </div>
     </section>
 
-    <div id="about">
+    <div id="about" class="section">
       <app-about-me></app-about-me>
     </div>
 
-    <div id="skill">
+    <div id="skill" class="section">
       <app-skills></app-skills>
     </div>
 
-    <div id="qualification">
+    <div id="qualification" class="section">
       <app-qualifications></app-qualifications>
     </div>
 
-    <section id="portfolio">
+    <section id="portfolio" class="section">
       <div nz-row>
         <h2 class="title-font">Portfolio - most recent work</h2>
       </div>
     </section>
 
-    <section id="blog">
+    <section id="blog" class="section">
       <div nz-row>
         <h2 class="title-font">Blog</h2>
       </div>
@@ -57,7 +56,7 @@
       </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="section">
       <nz-list nzSize="small">
         <div nz-row id="contact">
           <h2 class="title-font">Contact me</h2>
@@ -74,7 +73,7 @@
 
 
   <nz-sider>
-    <nz-anchor nzOffsetTop="100">
+    <nz-anchor nzOffsetTop="20">
       <nz-link nzHref="#summary" nzTitle="Home"></nz-link>
       <nz-link nzHref="#about" nzTitle="About Me"></nz-link>
       <nz-link nzHref="#skill" nzTitle="Skills"></nz-link>
