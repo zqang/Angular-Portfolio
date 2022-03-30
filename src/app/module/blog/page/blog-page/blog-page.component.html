@@ -1,1 +1,28 @@
-<p>blog-page works!</p>
+<nz-layout>
+  <nz-sider nzWidth="200">
+    <nz-card class="fixed-contact" [nzCover]="coverTemplate">
+      <nz-card-meta [nzTitle]="contactTitle" [nzDescription]="contactItem"></nz-card-meta>
+    </nz-card>
+    <ng-template #coverTemplate>
+      <div class="profile">
+        <img alt="profile-pic" [src]="src"/>
+      </div>
+    </ng-template>
+    <ng-template #contactTitle>
+      <h2 class="contact-title">Contact Me</h2>
+    </ng-template>
+    <ng-template #contactItem>
+      <nz-list nzSize="small">
+        <div nz-row *ngFor="let item of data">
+          <nz-list-item>
+            <span class="contact-item">{{item.title}}</span>
+          </nz-list-item>
+        </div>
+      </nz-list>
+    </ng-template>
+  </nz-sider>
+
+  <nz-content>
+    <app-blog-list></app-blog-list>
+  </nz-content>
+</nz-layout>

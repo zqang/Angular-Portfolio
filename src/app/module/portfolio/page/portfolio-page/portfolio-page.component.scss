@@ -11,3 +11,30 @@ nz-content {
   line-height: 120px;
   padding: 20px;
 }
+
+.fixed-contact{
+  position: fixed;
+  width: 250px;
+  height: 400px;
+  border: none;
+}
+
+.profile{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: black;
+
+  img{
+    width:100%;
+  }
+}
+
+.contact-title{
+  font-size: 18px;
+}
+
+.contact-item{
+  font-size: 14px;
+}

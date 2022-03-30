@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortfolioPageComponent implements OnInit {
 
-  src = "/assets/fbprofilepic-removebg.png";
+  src = "/assets/fbprofilepic.jpg";
   data = [
     {
       title: 'Melaka, Malaysia'
