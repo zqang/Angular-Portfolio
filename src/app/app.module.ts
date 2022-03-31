@@ -11,6 +11,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { PathResolveService } from './path-resolve.service';
+import { NgxsModule } from '@ngxs/store';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 
 registerLocaleData(en);
 
@@ -24,6 +27,9 @@ registerLocaleData(en);
     BrowserAnimationsModule,
     SharedModule,
     CoreModule,
+    NgxsModule.forRoot(),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
+    NgxsLoggerPluginModule.forRoot(),
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }, PathResolveService],
   bootstrap: [AppComponent]

@@ -22,6 +22,10 @@ const routes: Routes = [
     loadChildren: () => import('./module/login/login.module').then(m => m.LoginModule)
   },
   {
+    path: 'dashboard',
+    loadChildren: () => import('./module/admin-dashboard/admin-dashboard.module').then(m => m.AdminDashboardModule)
+  },
+  {
     path: '**',
     resolve: {
       path: PathResolveService
