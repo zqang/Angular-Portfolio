@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Store } from '@ngxs/store';
+import { Login } from '../../store/action/login.action';
 
 @Component({
   selector: 'app-login-page',
@@ -9,9 +12,17 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginPageComponent implements OnInit {
   validateForm!: FormGroup;
 
+  constructor(
+    private store: Store,
+    private fb: FormBuilder,
+    private router: Router
+  ) {}
+
   submitForm(): void {
     if (this.validateForm.valid) {
-      console.log('submit', this.validateForm.value);
+      this.store.dispatch(new Login(this.validateForm.getRawValue())).subscribe((data) => {
+        this.router.navigate(['/dashboard/home']);
+     });
     } else {
       Object.values(this.validateForm.controls).forEach(control => {
         if (control.invalid) {
@@ -22,13 +33,11 @@ export class LoginPageComponent implements OnInit {
     }
   }
 
-  constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.validateForm = this.fb.group({
       userName: [null, [Validators.required]],
       password: [null, [Validators.required]],
-      remember: [true]
     });
   }
 

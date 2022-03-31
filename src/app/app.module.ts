@@ -14,6 +14,9 @@ import { PathResolveService } from './path-resolve.service';
 import { NgxsModule } from '@ngxs/store';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
+import { environment } from 'src/environments/environment';
+import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
+import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 
 registerLocaleData(en);
 
@@ -28,8 +31,12 @@ registerLocaleData(en);
     SharedModule,
     CoreModule,
     NgxsModule.forRoot(),
+    NgxsStoragePluginModule.forRoot(),
+    NgxsRouterPluginModule.forRoot(),
     NgxsReduxDevtoolsPluginModule.forRoot(),
-    NgxsLoggerPluginModule.forRoot(),
+    NgxsLoggerPluginModule.forRoot({
+      disabled: environment.production,
+    }),
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }, PathResolveService],
   bootstrap: [AppComponent]
