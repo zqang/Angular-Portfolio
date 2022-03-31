@@ -13,6 +13,9 @@ import { NzListModule } from 'ng-zorro-antd/list';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzProgressModule } from 'ng-zorro-antd/progress';
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 
 @NgModule({
   declarations: [],
@@ -30,7 +33,10 @@ import { NzTabsModule } from 'ng-zorro-antd/tabs';
     NzListModule,
     NzAvatarModule,
     NzProgressModule,
-    NzTabsModule
+    NzTabsModule,
+    NzFormModule,
+    NzInputModule,
+    NzButtonModule
   ],
   exports: [
     NzLayoutModule,
@@ -46,7 +52,10 @@ import { NzTabsModule } from 'ng-zorro-antd/tabs';
     NzListModule,
     NzAvatarModule,
     NzProgressModule,
-    NzTabsModule
+    NzTabsModule,
+    NzFormModule,
+    NzInputModule,
+    NzButtonModule
   ]
 })
 export class ZorroModule { }

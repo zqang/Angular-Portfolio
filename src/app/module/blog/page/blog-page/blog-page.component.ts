@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class BlogPageComponent implements OnInit {
 
   src = "/assets/fbprofilepic.jpg";
-  placeholder ='/assets/fbprofilepic.jpg?x-oss-process=image/blur,r_50,s_50/quality,q_1/resize,m_mfit';
   data = [
     {
       title: 'Melaka, Malaysia'

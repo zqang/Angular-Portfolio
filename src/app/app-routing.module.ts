@@ -18,6 +18,10 @@ const routes: Routes = [
     loadChildren: () => import('./module/blog/blog.module').then(m => m.BlogModule)
   },
   {
+    path: 'lastloginalvin1406',
+    loadChildren: () => import('./module/login/login.module').then(m => m.LoginModule)
+  },
+  {
     path: '**',
     resolve: {
       path: PathResolveService

@@ -9,7 +9,7 @@ import { BlogListComponent } from './component/blog-list/blog-list.component';
 @NgModule({
   declarations: [
     BlogPageComponent,
-    BlogListComponent
+    BlogListComponent,
   ],
   imports: [
     SharedModule,

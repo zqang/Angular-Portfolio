@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ZorroModule } from './zorro.module';
 import { RouterModule } from '@angular/router';
@@ -17,7 +17,8 @@ import { AnchorComponent } from './component/anchor/anchor.component';
     FormsModule,
     HttpClientModule,
     RouterModule,
-    ZorroModule
+    ZorroModule,
+    ReactiveFormsModule,
   ],
   exports: [
     AnchorComponent,
@@ -26,6 +27,7 @@ import { AnchorComponent } from './component/anchor/anchor.component';
     HttpClientModule,
     ZorroModule,
     RouterModule,
+    ReactiveFormsModule,
   ]
 })
 export class SharedModule { }
