@@ -4,6 +4,7 @@ import { tap } from 'rxjs/operators';
 import { LoginService } from '../../service/login.service';
 import { Injectable } from '@angular/core';
 
+//check for user model need use or not?
 export interface LoginStateModel {
   token: string | null;
   username: string | null;
