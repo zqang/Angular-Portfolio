@@ -2,11 +2,11 @@
   <nz-content>
     <section id="summary" class="section">
       <div nz-row>
-        <div nz-col nzSpan="12" class="image">
+        <div nz-col nzXs="24" nzSm="22" nzMd="20" nzLg="12" nzXl="12" class="image">
           <img class="blob" nz-image width="700px" height="600px" [nzSrc]="srcBlob" [nzPlaceholder]="placeholderBlob" />
           <img class="profile-pic" nz-image  [nzSrc]="src" [nzPlaceholder]="placeholder" />
         </div>
-        <div nz-col nzSpan="12">
+        <div nz-col nzXs="24" nzSm="22" nzMd="20" nzLg="12" nzXl="12">
           <app-career-summary></app-career-summary>
         </div>
       </div>
@@ -58,7 +58,7 @@
   </nz-content>
 
 
-  <nz-sider>
+  <nz-sider nzCollapsible nzBreakpoint="md" [nzCollapsedWidth]="0">
     <nz-anchor nzOffsetTop="20">
       <nz-link nzHref="#summary" nzTitle="Home"></nz-link>
       <nz-link nzHref="#about" nzTitle="About Me"></nz-link>

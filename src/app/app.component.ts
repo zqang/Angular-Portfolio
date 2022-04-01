@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, NgZone } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'portfolio-website';
+
+  // constructor(ngZone: NgZone){}
+
+  // eat(){
+  //   NgZone.isInAngularZone
+  // }
 }
