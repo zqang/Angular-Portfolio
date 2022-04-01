@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Select, Store } from '@ngxs/store';
+import { Observable } from 'rxjs';
+import { AppState, AppStateModel } from 'src/app/core/store/state/app.state';
 
 @Component({
   selector: 'app-landing-page',
@@ -6,6 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./landing-page.component.scss']
 })
 export class LandingPageComponent implements OnInit {
+
+  @Select(AppState.isMobile) isMobile$!: Observable<boolean>;
+
+  isMobile: boolean = false ;
+
   title = "About Me"
   src = "/assets/fbprofilepic-removebg.png";
   srcBlob = "/assets/blob.svg";
@@ -31,7 +39,11 @@ export class LandingPageComponent implements OnInit {
         title: 'Whatsapp'
       },
     ];
-  constructor() { }
+  constructor(private store: Store) {
+    this.isMobile$.subscribe((data) => {
+      this.isMobile = data;
+    })
+  }
 
   ngOnInit(): void {
   }

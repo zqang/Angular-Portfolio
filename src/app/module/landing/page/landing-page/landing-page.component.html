@@ -58,7 +58,7 @@
   </nz-content>
 
 
-  <nz-sider nzCollapsible nzBreakpoint="md" [nzCollapsedWidth]="0">
+  <nz-sider *ngIf="!isMobile" nzWidth="200">
     <nz-anchor nzOffsetTop="20">
       <nz-link nzHref="#summary" nzTitle="Home"></nz-link>
       <nz-link nzHref="#about" nzTitle="About Me"></nz-link>
@@ -69,6 +69,7 @@
       <nz-link nzHref="#contact" nzTitle="Contact Me"></nz-link>
     </nz-anchor>
   </nz-sider>
+
 
 
 </nz-layout>
