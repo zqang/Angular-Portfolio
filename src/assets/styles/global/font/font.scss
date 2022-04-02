@@ -3,100 +3,205 @@
 // font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif; ---title
 
 /* Extra small devices (phones, 600px and down) */
-.title-font{
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 4vw;
+// .title-font{
+//   font-family: Georgia, 'Times New Roman', Times, serif;
+//   font-size: 60px;
+// }
+
+// .body-font{
+//   font-family: Arial, Helvetica, sans-serif;
+//   font-size: 30px;
+// }
+
+@media only screen and (max-width: 600px) {
+  *{
+    font-size: 12px;
+  }
+
+  .header-logo{
+    font-size: 18px;
+  }
+
+  .header-menu{
+    font-size: 12px;
+  }
+
+  .title-font{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+  }
+
+  .body-font{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+  }
+
+  div.ant-card-head-title{
+    font-size: 15px;
+  }
+
+
+  li.ant-timeline-item{
+    font-size: 12px;
+  }
+
+  div.ant-tabs-tab-btn{
+    font-size: 12px;
+  }
 }
 
-.body-font{
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 2vw;
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  *{
+    font-size: 12px;
+  }
+
+  .header-logo{
+    font-size: 20px;
+  }
+
+  .header-menu{
+    font-size: 15px;
+  }
+
+  .title-font{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+  }
+
+  .body-font{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+  }
+
+  div.ant-card-head-title{
+    font-size: 18px;
+  }
+
+
+  li.ant-timeline-item{
+    font-size: 15px;
+  }
+
+  div.ant-tabs-tab-btn{
+    font-size: 12px;
+  }
+
 }
 
-// @media only screen and (max-width: 600px) {
-//   *{
-//     font-size: 12px;
-//   }
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  *{
+    font-size: 18px;
+  }
 
-//   .title-font{
-//     font-family: Georgia, 'Times New Roman', Times, serif;
-//     font-size: 20px;
-//   }
+  .header-logo{
+    font-size: 25px;
+  }
 
-//   .body-font{
-//     font-family: Arial, Helvetica, sans-serif;
-//     font-size: 12px;
-//   }
-// }
+  .header-menu{
+    font-size: 16px;
+  }
 
-// /* Small devices (portrait tablets and large phones, 600px and up) */
-// @media only screen and (min-width: 600px) {
-//   *{
-//     font-size: 18px;
-//   }
+  .title-font{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 40px;
+  }
 
-//   .title-font{
-//     font-family: Georgia, 'Times New Roman', Times, serif;
-//     font-size: 60px;
-//   }
+  .body-font{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+  }
 
-//   .body-font{
-//     font-family: Arial, Helvetica, sans-serif;
-//     font-size: 30px;
-//   }
+  div.ant-card-head-title{
+    font-size: 20px;
+  }
 
-// }
 
-// /* Medium devices (landscape tablets, 768px and up) */
-// @media only screen and (min-width: 768px) {
-//   *{
-//     font-size: 18px;
-//   }
+  li.ant-timeline-item{
+    font-size: 20px;
+  }
 
-//   .title-font{
-//     font-family: Georgia, 'Times New Roman', Times, serif;
-//     font-size: 60px;
-//   }
+  div.ant-tabs-tab-btn{
+    font-size: 15px;
+  }
 
-//   .body-font{
-//     font-family: Arial, Helvetica, sans-serif;
-//     font-size: 30px;
-//   }
+}
 
-// }
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  *{
+    font-size: 18px;
+  }
 
-// /* Large devices (laptops/desktops, 992px and up) */
-// @media only screen and (min-width: 992px) {
-//   *{
-//     font-size: 18px;
-//   }
+  .header-logo{
+    font-size: 30px;
+  }
 
-//   .title-font{
-//     font-family: Georgia, 'Times New Roman', Times, serif;
-//     font-size: 60px;
-//   }
+  .header-menu{
+    font-size: 18px;
+  }
 
-//   .body-font{
-//     font-family: Arial, Helvetica, sans-serif;
-//     font-size: 30px;
-//   }
+  .title-font{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 50px;
+  }
 
-// }
+  .body-font{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+  }
 
-// /* Extra large devices (large laptops and desktops, 1200px and up) */
-// @media only screen and (min-width: 1200px) {
-//   *{
-//     font-size: 18px;
-//   }
+  div.ant-card-head-title{
+    font-size: 25px;
+  }
 
-//   .title-font{
-//     font-family: Georgia, 'Times New Roman', Times, serif;
-//     font-size: 60px;
-//   }
 
-//   .body-font{
-//     font-family: Arial, Helvetica, sans-serif;
-//     font-size: 30px;
-//   }
+  li.ant-timeline-item{
+    font-size: 25px;
+  }
 
-// }
+  div.ant-tabs-tab-btn{
+    font-size: 15px;
+  }
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  *{
+    font-size: 18px;
+  }
+
+  .header-logo{
+    font-size: 30px;
+  }
+
+  .header-menu{
+    font-size: 18px;
+  }
+
+  .title-font{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 60px;
+  }
+
+  .body-font{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+  }
+
+  div.ant-card-head-title{
+    font-size: 30px;
+  }
+
+
+  li.ant-timeline-item{
+    font-size: 30px;
+  }
+
+  div.ant-tabs-tab-btn{
+    font-size: 20px;
+  }
+
+}
