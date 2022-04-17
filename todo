@@ -8,23 +8,22 @@ blog page and portfolio page
 - change blog content
 - add blog details page (open a new tab)
 
-dashboard page
+blog and portfolio detail
+
+<!-- dashboard page
 - blog/portfolio edit add list and edit button and delete button
-- create new add markdown editor and tag for blog/portfolio
+- create new add markdown editor and tag for blog/portfolio -->
 
 responsive design for mobile
 
-
 2. solve icon error in console
 
-3. add auth guard to dashboard page
+3. add auth guard to dashboard page (no need first)
 
 4. ngxs update and delete blog and portfolio (solve backend first)
 
 5. backend
-- use node js
-- api for auth jwt token
-- api for blog and portfolio
 - security
+- api for all data
 
-6.
+6. integrate api

@@ -9,6 +9,8 @@ const breakpoints = {
   medium: '(min-width: 960px) and (max-width: 1279px)',
   large: '(min-width: 1280px) and (max-width: 1919px)',
   xLarge: '(min-width: 1920px)',
+  bigDevice: '(min-width: 960px)',
+  mobile: '(max-width: 959px)'
 };
 
 @UntilDestroy()
