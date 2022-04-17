@@ -17,7 +17,6 @@ import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { environment } from 'src/environments/environment';
 import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
-import { AppState } from './core/store/state/app.state';
 
 registerLocaleData(en);
 
@@ -31,7 +30,7 @@ registerLocaleData(en);
     BrowserAnimationsModule,
     SharedModule,
     CoreModule,
-    NgxsModule.forRoot([AppState]),
+    NgxsModule.forRoot([]),
     NgxsStoragePluginModule.forRoot(),
     NgxsRouterPluginModule.forRoot(),
     NgxsReduxDevtoolsPluginModule.forRoot(),

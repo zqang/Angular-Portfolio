@@ -5,12 +5,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { ZorroModule } from './zorro.module';
 import { RouterModule } from '@angular/router';
 import { AnchorComponent } from './component/anchor/anchor.component';
+import { MatchesDirective } from './directive/match.directive';
 
 
 
 @NgModule({
   declarations: [
-    AnchorComponent
+    AnchorComponent,
+    MatchesDirective
   ],
   imports: [
     CommonModule,
@@ -28,6 +30,7 @@ import { AnchorComponent } from './component/anchor/anchor.component';
     ZorroModule,
     RouterModule,
     ReactiveFormsModule,
+    MatchesDirective,
   ]
 })
 export class SharedModule { }
