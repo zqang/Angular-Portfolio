@@ -27,3 +27,20 @@ responsive design for mobile
 - api for all data
 
 6. integrate api
+
+
+- about me
+- contact
+- remove recent portfolio/blog
+- portfolio/blog detail
+- deploy
+- data insert
+
+v1 static app only
+v2 responsive + more features
+v3 ...
+
+18/4
+- need add another way for thumbnail description and image
+- need to use ngxs to transfer data from portfolio list to item
+- need to get route to the child in portfolio list

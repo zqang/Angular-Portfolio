@@ -9,6 +9,7 @@ import { PortfolioRestService } from '../../service/portfolio-rest.service';
 })
 export class PortfolioListComponent implements OnInit {
   data: Portfolio[] = [];
+  newData: Portfolio[] = [];
 
   constructor(private portfolioService: PortfolioRestService){
 
@@ -16,8 +17,9 @@ export class PortfolioListComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadData(1);
-    this.portfolioService.getPortfolio().subscribe((data: Portfolio) => {
+    this.portfolioService.getPortfolio().subscribe((data: Portfolio[]) => {
       console.log(data);
+      this.newData = data;
     })
   }
 
