@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Select, Store } from '@ngxs/store';
+import { Observable, Subscription, tap } from 'rxjs';
+import { BASE_URL } from 'src/app/shared/constant/url.constants';
 import { Portfolio } from '../../model/portfolio';
-import { PortfolioRestService } from '../../service/portfolio-rest.service';
+import { GetPortfolioList } from '../../store/action/portfolio.action';
+import { PortfolioState } from '../../store/state/portfolio.state';
 
 @Component({
   selector: 'app-portfolio-list',
@@ -8,41 +12,31 @@ import { PortfolioRestService } from '../../service/portfolio-rest.service';
   styleUrls: ['./portfolio-list.component.scss']
 })
 export class PortfolioListComponent implements OnInit {
-  data: Portfolio[] = [];
-  newData: Portfolio[] = [];
+  @Select(PortfolioState.portfolios)portfolios$!: Observable<Portfolio[]>;
+  @Select(PortfolioState.arePortfoliosLoaded) arePortfoliosLoaded$! : Observable<boolean>;
 
-  constructor(private portfolioService: PortfolioRestService){
+  arePortfolioLoadedSub!: Subscription;
+
+  baseUrl: string = BASE_URL
+
+  constructor(private store: Store){
 
   }
 
-  ngOnInit(): void {
-    this.loadData(1);
-    this.portfolioService.getPortfolio().subscribe((data: Portfolio[]) => {
-      console.log(data);
-      this.newData = data;
-    })
+  ngOnInit() {
+    this.arePortfolioLoadedSub = this.arePortfoliosLoaded$.pipe(
+      tap((arePortfoliosLoaded) => {
+        if (!arePortfoliosLoaded) {
+          this.store.dispatch(new GetPortfolioList());
+        }
+      })
+    ).subscribe(value => {
+      console.log(value);
+    });
   }
 
-  loadData(pi: number): void {
-    // this.data = new Array(5).fill({}).map((_, index) => ({
-    //   href: 'http://ant.design',
-    //   title: `ant design part ${index} (page: ${pi})`,
-    //   avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-    //   description: 'Ant Design, a design language for background applications, is refined by Ant UED Team.',
-    //   content:
-    //     'We supply a series of design principles, practical patterns and high quality design resources ' +
-    //     '(Sketch and Axure), to help people create their product prototypes beautifully and efficiently.'
-    // }));
-    this.data = new Array(5).fill({}).map((_, index) => ({
-      id: '1',
-      date: '19/02/2022',
-      name: `ant design part ${index} (page: ${pi})`,
-      description: 'Ant Design, a design language for background applications, is refined by Ant UED Team.',
-      body:
-        'We supply a series of design principles, practical patterns and high quality design resources ' +
-        '(Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
-      image: 'https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png',
-      is_active: true
-    }));
+  ngOnDestroy() {
+    this.arePortfolioLoadedSub.unsubscribe();
   }
+
 }

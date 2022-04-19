@@ -12,6 +12,8 @@ export interface Portfolio {
   name: string,
   description: string,
   body: string,
-  image: string
+  image: string,
+  thumbnail_text: string,
+  thumbnail_image: string,
   is_active: boolean
 }
