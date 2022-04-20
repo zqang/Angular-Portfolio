@@ -14,7 +14,7 @@
       <nz-list nzSize="small">
         <div nz-row *ngFor="let item of data">
           <nz-list-item>
-            <span (click)="onOpenNewTab(item.url)" class="contact-item">{{item.title}}</span>
+            <span style="cursor: pointer" (click)="onOpenNewTab(item.url)" class="contact-item hover-color">{{item.title}}</span>
           </nz-list-item>
         </div>
       </nz-list>
@@ -28,7 +28,7 @@
     </div>
     <div nz-row *ngFor="let item of data">
       <nz-list-item>
-        <span (click)="onOpenNewTab(item.url)" class="body-font">{{item.title}}</span>
+        <span style="cursor: pointer;" (click)="onOpenNewTab(item.url)" class="body-font hover-color">{{item.title}}</span>
       </nz-list-item>
     </div>
   </nz-list>

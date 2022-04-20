@@ -1,0 +1,18 @@
+<nz-breadcrumb>
+  <nz-breadcrumb-item>
+    <a [routerLink]="['../']">Blogs</a>
+  </nz-breadcrumb-item>
+  <nz-breadcrumb-item>{{blog.name}}</nz-breadcrumb-item>
+</nz-breadcrumb>
+<div>
+  <section>
+    <h2>{{blog.name}}</h2>
+    <div>
+      <span>{{blog.author}}</span>
+      <span>{{blog.timestamp}}</span>
+    </div>
+  </section>
+  <section>
+    <div [innerHTML]="blog.body"></div>
+  </section>
+</div>

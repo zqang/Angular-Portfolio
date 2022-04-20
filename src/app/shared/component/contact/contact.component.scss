@@ -1,13 +1,7 @@
-nz-sider {
-  background: white;
-  color: black;
-  line-height: 120px;
-  width: 300px;
-}
 
 .fixed-contact{
   position: fixed;
-  width: 250px;
+  width: 200px;
   height: 400px;
   border: none;
 }
@@ -32,3 +26,6 @@ nz-sider {
   font-size: 1vw;
 }
 
+.hover-color:hover{
+  color: #1990FF;
+}

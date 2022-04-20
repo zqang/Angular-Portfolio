@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Blog } from '../model/blog';
-
-const URL = 'http://127.0.0.1:8000';
+import { BASE_URL } from 'src/app/shared/constant/url.constants';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +11,8 @@ export class BlogRestService {
 
   constructor(private http: HttpClient) { }
 
-  getBlog(){
-    return this.http.get<Blog>(`${URL}/blog`);
+  getBlogs(): Observable<any>{
+    return this.http.get<Blog[]>(`${BASE_URL}/blog`)
   }
 
   // updateBlog(blog: Blog){

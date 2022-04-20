@@ -20,9 +20,10 @@ export class PortfolioListComponent implements OnInit {
 
   baseUrl: string = BASE_URL
 
-  constructor(private store: Store, private router: Router, private route: ActivatedRoute){
-
-  }
+  constructor(
+    private store: Store,
+    private router: Router,
+    private route: ActivatedRoute){}
 
   ngOnInit() {
     this.arePortfolioLoadedSub = this.arePortfoliosLoaded$.pipe(
@@ -32,7 +33,7 @@ export class PortfolioListComponent implements OnInit {
         }
       })
     ).subscribe(value => {
-      console.log(value);
+      console.log('done loaded', value)
     });
   }
 
