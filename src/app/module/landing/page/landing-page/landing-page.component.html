@@ -43,16 +43,7 @@
     </section>
 
     <section id="contact" >
-      <nz-list nzSize="small">
-        <div nz-row id="contact">
-          <h2 class="title-font">Contact me</h2>
-        </div>
-        <div nz-row *ngFor="let item of data">
-          <nz-list-item>
-            <span class="body-font">{{item.title}}</span>
-          </nz-list-item>
-        </div>
-      </nz-list>
+      <app-contact [isLanding]="true"></app-contact>
     </section>
 
   </nz-content>

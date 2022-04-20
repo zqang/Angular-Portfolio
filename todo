@@ -41,6 +41,15 @@ v2 responsive + more features
 v3 ...
 
 18/4
-- need add another way for thumbnail description and image
-- need to use ngxs to transfer data from portfolio list to item
-- need to get route to the child in portfolio list
+- need add another way for thumbnail description and image (done)
+- need to use ngxs to transfer data from portfolio list to item (done)
+- need to get route to the child in portfolio list (done)
+
+19/4
+- need to modify portfolio detail page (done)
+- navigate to child route for portfolio (done)
+- put link to contact and add a new component (done)
+
+20/4
+- change for blog like portfolio
+

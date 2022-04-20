@@ -7,7 +7,7 @@ import { PortfolioPageComponent } from './page/portfolio-page/portfolio-page.com
 const routes: Routes = [
   {path: '', component: PortfolioPageComponent, children: [
     {path: '', component: PortfolioListComponent},
-    {path: 'detail', component: PortfolioItemComponent }
+    {path: ':id', component: PortfolioItemComponent }
   ]}
 ];
 

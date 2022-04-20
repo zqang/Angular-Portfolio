@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Select, Store } from '@ngxs/store';
 import { Observable, Subscription, tap } from 'rxjs';
 import { BASE_URL } from 'src/app/shared/constant/url.constants';
 import { Portfolio } from '../../model/portfolio';
-import { GetPortfolioList } from '../../store/action/portfolio.action';
+import { GetPortfolio, GetPortfolioList } from '../../store/action/portfolio.action';
 import { PortfolioState } from '../../store/state/portfolio.state';
 
 @Component({
@@ -19,7 +20,7 @@ export class PortfolioListComponent implements OnInit {
 
   baseUrl: string = BASE_URL
 
-  constructor(private store: Store){
+  constructor(private store: Store, private router: Router, private route: ActivatedRoute){
 
   }
 
@@ -37,6 +38,11 @@ export class PortfolioListComponent implements OnInit {
 
   ngOnDestroy() {
     this.arePortfolioLoadedSub.unsubscribe();
+  }
+
+  onNavigatePortfolio(id : string){
+    this.router.navigate([id], {relativeTo: this.route})
+    this.store.dispatch(new GetPortfolio(id))
   }
 
 }

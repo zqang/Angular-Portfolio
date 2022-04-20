@@ -1,18 +1,20 @@
 import { State, Selector, StateContext, Action } from '@ngxs/store';
 import { tap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
-import { Portfolio } from '../../model/portfolio';
+import { Portfolio, Portfolio_Defaults } from '../../model/portfolio';
 import { PortfolioRestService } from '../../service/portfolio-rest.service';
-import { GetPortfolioList } from '../action/portfolio.action';
+import { GetPortfolioList, GetPortfolio } from '../action/portfolio.action';
 
 export interface PortfolioStateModel {
-  portfolio: Portfolio[];
+  portfolios: Portfolio[];
   arePortfoliosLoaded: boolean;
+  portfolio: Portfolio;
 }
 
 const portfolioStateDefaults: PortfolioStateModel = {
-  portfolio: [],
+  portfolios: [],
   arePortfoliosLoaded: false,
+  portfolio: Portfolio_Defaults,
 };
 
 @State<PortfolioStateModel>({
@@ -22,10 +24,14 @@ const portfolioStateDefaults: PortfolioStateModel = {
 @Injectable()
 export class PortfolioState {
 
+  @Selector()
+  static portfolio(state: PortfolioStateModel): Portfolio{
+    return state.portfolio;
+  }
 
   @Selector()
   static portfolios(state: PortfolioStateModel): Portfolio[]{
-    return state.portfolio;
+    return state.portfolios;
   }
 
   @Selector()
@@ -42,10 +48,19 @@ export class PortfolioState {
           const state = getState();
           setState({
             ...state,
-            portfolio: result,
+            portfolios: result,
             arePortfoliosLoaded: true,
           });
         })
       );
     }
+
+  @Action(GetPortfolio)
+  getPortfolio({getState, setState}: StateContext<PortfolioStateModel>, action: GetPortfolio) {
+    const state = getState();
+    setState({
+      ...state,
+      portfolio: state.portfolios.filter((data) => { return data.id === action.payload})[0]
+    })
+  }
 }
