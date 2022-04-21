@@ -4,7 +4,7 @@ import { Select, Store } from '@ngxs/store';
 import { Observable, Subscription, tap } from 'rxjs';
 import { BASE_URL } from 'src/app/shared/constant/url.constants';
 import { Portfolio } from '../../model/portfolio';
-import { GetPortfolio, GetPortfolioList } from '../../store/action/portfolio.action';
+import { GetPortfolio, GetPortfolioList, SetArePortfoliosLoaded } from '../../store/action/portfolio.action';
 import { PortfolioState } from '../../store/state/portfolio.state';
 
 @Component({
@@ -39,6 +39,7 @@ export class PortfolioListComponent implements OnInit {
 
   ngOnDestroy() {
     this.arePortfolioLoadedSub.unsubscribe();
+    // this.store.dispatch(new SetArePortfoliosLoaded(false));
   }
 
   onNavigatePortfolio(id : string){

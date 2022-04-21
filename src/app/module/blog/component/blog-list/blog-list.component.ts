@@ -39,7 +39,7 @@ export class BlogListComponent implements OnInit {
 
   ngOnDestroy() {
     this.areBlogsLoadedSub.unsubscribe();
-    this.store.dispatch(new SetAreBlogsLoaded(false));
+    // this.store.dispatch(new SetAreBlogsLoaded(false));
   }
 
   onNavigateBlog(id : string){

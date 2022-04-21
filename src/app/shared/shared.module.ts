@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { AnchorComponent } from './component/anchor/anchor.component';
 import { MatchesDirective } from './directive/match.directive';
 import { ContactComponent } from './component/contact/contact.component';
+import { LoadingSpinnerComponent } from './component/loading-spinner/loading-spinner.component';
 
 
 
@@ -13,7 +14,8 @@ import { ContactComponent } from './component/contact/contact.component';
   declarations: [
     AnchorComponent,
     MatchesDirective,
-    ContactComponent
+    ContactComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +32,8 @@ import { ContactComponent } from './component/contact/contact.component';
     RouterModule,
     ReactiveFormsModule,
     MatchesDirective,
-    ContactComponent
+    ContactComponent,
+    LoadingSpinnerComponent
   ]
 })
 export class SharedModule { }

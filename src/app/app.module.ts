@@ -17,7 +17,7 @@ import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { environment } from 'src/environments/environment';
 import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 registerLocaleData(en);
 
@@ -40,7 +40,9 @@ registerLocaleData(en);
       disabled: environment.production,
     }),
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }, PathResolveService],
+  providers: [
+    { provide: NZ_I18N, useValue: en_US },
+    PathResolveService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

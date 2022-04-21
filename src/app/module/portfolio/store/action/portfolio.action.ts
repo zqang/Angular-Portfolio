@@ -8,3 +8,7 @@ export class GetPortfolio{
   constructor(public payload: string){}
 }
 
+export class SetArePortfoliosLoaded{
+  static readonly type = '[Portfolio] Set Are Portfolios Loaded';
+  constructor(public payload: boolean){}
+}

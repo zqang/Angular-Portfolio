@@ -3,7 +3,7 @@ import { tap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { Portfolio, Portfolio_Defaults } from '../../model/portfolio';
 import { PortfolioRestService } from '../../service/portfolio-rest.service';
-import { GetPortfolioList, GetPortfolio } from '../action/portfolio.action';
+import { GetPortfolioList, GetPortfolio, SetArePortfoliosLoaded } from '../action/portfolio.action';
 
 export interface PortfolioStateModel {
   portfolios: Portfolio[];
@@ -61,6 +61,15 @@ export class PortfolioState {
     setState({
       ...state,
       portfolio: state.portfolios.filter((data) => { return data.id === action.payload})[0]
+    })
+  }
+
+  @Action(SetArePortfoliosLoaded)
+  setArePortfoliosLoaded({getState, setState}: StateContext<PortfolioStateModel>, action: SetArePortfoliosLoaded) {
+    const state = getState();
+    setState({
+      ...state,
+      arePortfoliosLoaded: action.payload
     })
   }
 }
