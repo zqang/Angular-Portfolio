@@ -10,10 +10,8 @@ export class LandingPageComponent implements OnInit {
   isMobile: boolean = false ;
 
   title = "About Me"
-  src = "/assets/fbprofilepic-removebg.png";
-  srcBlob = "/assets/blob.svg";
-  placeholder ='/assets/fbprofilepic-removebg.png?x-oss-process=image/blur,r_50,s_50/quality,q_1/resize,m_mfit,h_200,w_200';
-  placeholderBlob ='/assets/blob.svg?x-oss-process=image/blur,r_50,s_50/quality,q_1/resize,m_mfit,h_200,w_200';
+  src = "/assets/profile_pic_blob.png";
+  placeholder ='/assets/profile_pic_blob.png?x-oss-process=image/blur,r_50,s_50/quality,q_1/resize,m_mfit,h_200,w_200';
 
   constructor() {
   }

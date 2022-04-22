@@ -11,9 +11,11 @@
 }
 
 nz-header {
+  position: fixed;
   width: 100%;
   padding: 0;
-  background-color: white;
+  background-color: rgb(123, 172, 56);
+  z-index: 10;
 }
 
 .menu-list{

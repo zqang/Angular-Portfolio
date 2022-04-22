@@ -21,6 +21,7 @@ import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
 import { NzBackTopModule } from 'ng-zorro-antd/back-top';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 
 @NgModule({
   declarations: [],
@@ -46,7 +47,8 @@ import { NzBackTopModule } from 'ng-zorro-antd/back-top';
     NzTypographyModule,
     NzSpinModule,
     NzSkeletonModule,
-    NzBackTopModule
+    NzBackTopModule,
+    NzToolTipModule
   ],
   exports: [
     NzLayoutModule,
@@ -70,7 +72,8 @@ import { NzBackTopModule } from 'ng-zorro-antd/back-top';
     NzTypographyModule,
     NzSpinModule,
     NzSkeletonModule,
-    NzBackTopModule
+    NzBackTopModule,
+    NzToolTipModule
   ]
 })
 export class ZorroModule { }
