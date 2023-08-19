@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundPageComponent } from './core/static-page/not-found-page/not-found-page.component';
 import { PathResolveService } from './path-resolve.service';
+import { AuthGuard } from './auth-guard';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -23,7 +24,8 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    loadChildren: () => import('./module/admin-dashboard/admin-dashboard.module').then(m => m.AdminDashboardModule)
+    loadChildren: () => import('./module/admin-dashboard/admin-dashboard.module').then(m => m.AdminDashboardModule),
+    canActivate: [AuthGuard]
   },
   {
     path: '**',

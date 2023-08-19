@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { User } from '../model/user';
 import { environment } from 'src/environments/environment';
+import { BlogPost } from '../model/blog';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class BlogService {
 
   constructor(private http: HttpClient) { }
 
-  login(user: User): Observable<any> {
-    return this.http.post(`${environment.BACKEND_URL}/Authentication/login`, user);
+  getBlogPosts(): Observable<BlogPost[]> {
+    return this.http.get<BlogPost[]>(`${environment.BACKEND_URL}/BlogPosts`);
   }
 }

@@ -1,5 +1,5 @@
 <div class="login">
-  <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+  <form nz-form [formGroup]="validateForm" style="width: 40%;" (ngSubmit)="submitForm()">
     <nz-form-item>
       <nz-form-control nzErrorTip="Please input your username!">
         <nz-input-group nzPrefixIcon="user">
@@ -14,7 +14,7 @@
         </nz-input-group>
       </nz-form-control>
     </nz-form-item>
-
+    <div *ngIf="invalidLogin">Invalid username or password</div>
     <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Log in</button>
   </form>
 </div>

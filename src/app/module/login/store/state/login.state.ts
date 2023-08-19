@@ -43,6 +43,7 @@ export class LoginState {
           token: result.token,
           username: action.payload.username
         });
+        localStorage.setItem("jwt",result.token);
       })
       );
     }

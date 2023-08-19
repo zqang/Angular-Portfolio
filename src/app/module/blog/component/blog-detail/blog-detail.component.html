@@ -1,0 +1,19 @@
+<div>
+  <button nz-button nzType="default" nzSize="default" nzShape="round" (click)="navigateBack()">Back <span nz-icon nzType="rollback"></span></button>
+</div>
+
+<div *ngIf="blogPost$ | async; let blogPost">
+  <div class="title-blog">
+    <h1>{{blogPost.title}}</h1>
+  </div>
+
+  <div class="desc-blog">
+    <span>Date Created At : {{blogPost.createdAt | date}}</span>
+    <span>Date Updated At : {{blogPost.updatedAt | date}}</span>
+    <!-- //author -->
+  </div>
+
+  <div class="content-blog">{{blogPost.content}}</div>
+
+  <!-- reply comment and like button and also other export section or share section  -->
+</div>

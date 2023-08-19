@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminDashboardLayoutComponent } from './layout/admin-dashboard-layout/admin-dashboard-layout.component';
-import { BlogEditComponent } from './page/blog-edit/blog-edit.component';
-import { CreateNewComponent } from './page/create-new/create-new.component';
+import {  BlogTableComponent } from './page/blog-table/blog-table.component';
 import { DashboardComponent } from './page/dashboard/dashboard.component';
 import { PortfolioEditComponent } from './page/portfolio-edit/portfolio-edit.component';
 
@@ -17,16 +16,12 @@ const routes: Routes = [
         component: DashboardComponent,
       },
       {
-        path: 'blog-edit',
-        component: BlogEditComponent,
+        path: 'blog-table',
+        component: BlogTableComponent,
       },
       {
-        path: 'portfolio-edit',
+        path: 'portfolio-table',
         component: PortfolioEditComponent,
-      },
-      {
-        path: 'create-new',
-        component: CreateNewComponent,
       }
     ]
   },

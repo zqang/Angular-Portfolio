@@ -18,8 +18,15 @@ import { environment } from 'src/environments/environment';
 import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 import { AppState } from './core/store/state/app.state';
+import { JwtModule } from '@auth0/angular-jwt';
+import { AuthGuard } from './auth-guard';
+import { BlogState } from './core/store/state/blog.state';
 
 registerLocaleData(en);
+
+export function tokenGetter() {
+  return localStorage.getItem("jwt");
+}
 
 @NgModule({
   declarations: [
@@ -31,15 +38,22 @@ registerLocaleData(en);
     BrowserAnimationsModule,
     SharedModule,
     CoreModule,
-    NgxsModule.forRoot([AppState]),
+    NgxsModule.forRoot([AppState, BlogState]),
     NgxsStoragePluginModule.forRoot(),
     NgxsRouterPluginModule.forRoot(),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxsLoggerPluginModule.forRoot({
       disabled: environment.production,
     }),
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: [environment.JWT_ALLOWED_DOMAIN],
+        disallowedRoutes: []
+      }
+    })
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }, PathResolveService],
+  providers: [{ provide: NZ_I18N, useValue: en_US }, PathResolveService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

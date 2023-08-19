@@ -11,6 +11,7 @@ import { Login } from '../../store/action/login.action';
 })
 export class LoginPageComponent implements OnInit {
   validateForm!: FormGroup;
+  invalidLogin?: boolean;
 
   constructor(
     private store: Store,
@@ -21,7 +22,10 @@ export class LoginPageComponent implements OnInit {
   submitForm(): void {
     if (this.validateForm.valid) {
       this.store.dispatch(new Login(this.validateForm.getRawValue())).subscribe((data) => {
+        this.invalidLogin = false;
         this.router.navigate(['/dashboard/home']);
+     }, error => {
+      this.invalidLogin = true;
      });
     } else {
       Object.values(this.validateForm.controls).forEach(control => {

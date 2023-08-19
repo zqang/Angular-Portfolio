@@ -29,6 +29,7 @@ export class BlogPageComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

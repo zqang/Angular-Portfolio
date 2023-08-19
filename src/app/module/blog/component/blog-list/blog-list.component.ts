@@ -1,5 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Blog } from '../../model/blog';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { tap } from 'rxjs/operators';
+import { Select, Store } from '@ngxs/store';
+import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import { BlogPost } from 'src/app/shared/model/blog';
+import { BlogState } from 'src/app/core/store/state/blog.state';
+import { GetBlogPosts } from 'src/app/core/store/action/blog.action';
 
 @Component({
   selector: 'app-blog-list',
@@ -7,21 +15,16 @@ import { Blog } from '../../model/blog';
   styleUrls: ['./blog-list.component.scss']
 })
 export class BlogListComponent implements OnInit {
-  data: Blog[] = [];
+  @Select(BlogState.blogPosts) blogPosts$: Observable<BlogPost[]> | undefined;
+
+  constructor(private store: Store, private router: Router) { }
 
   ngOnInit(): void {
-    this.loadData(1);
+    this.store.dispatch(new GetBlogPosts());
   }
 
-  loadData(pi: number): void {
-    this.data = new Array(5).fill({}).map((_, index) => ({
-      href: 'http://ant.design',
-      title: `ant design part ${index} (page: ${pi})`,
-      avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-      description: 'Ant Design, a design language for background applications, is refined by Ant UED Team.',
-      content:
-        'We supply a series of design principles, practical patterns and high quality design resources ' +
-        '(Sketch and Axure), to help people create their product prototypes beautifully and efficiently.'
-    }));
+  navigateBlogDetail(index : number) : void {
+    console.log(index);
+    this.router.navigate([`/blog/${(index+1).toString()}`]);
   }
 }

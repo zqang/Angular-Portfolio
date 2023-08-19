@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  BACKEND_URL: 'https://localhost:44305/api',
+  JWT_ALLOWED_DOMAIN: 'localhost:44305'
 };
 
 /*
