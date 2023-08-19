@@ -1,9 +1,10 @@
+<nz-back-top></nz-back-top>
 <nz-layout>
+
   <nz-content>
-    <section id="summary" class="section">
+    <section id="summary" class="section top-section">
       <div nz-row>
         <div nz-col nzXs="24" nzSm="22" nzMd="20" nzLg="12" nzXl="12" class="image">
-          <img class="blob" nz-image width="700px" height="600px" [nzSrc]="srcBlob" [nzPlaceholder]="placeholderBlob" />
           <img class="profile-pic" nz-image  [nzSrc]="src" [nzPlaceholder]="placeholder" />
         </div>
         <div nz-col nzXs="24" nzSm="22" nzMd="20" nzLg="12" nzXl="12">
@@ -24,48 +25,29 @@
       <app-qualifications></app-qualifications>
     </div>
 
-    <section id="portfolio" class="section">
-      <div nz-row>
-        <h2 class="title-font">Portfolio</h2>
-      </div>
-      <div nz-row>
-        <p class="body-font">Recent works</p>
-      </div>
+    <!-- <section id="portfolio" class="section">
+      <app-brief-portfolio></app-brief-portfolio>
     </section>
 
     <section id="blog" class="section">
-      <div nz-row>
-        <h2 class="title-font">Blog</h2>
-      </div>
-      <div nz-row>
-        <p class="body-font">Recent posts</p>
-      </div>
-    </section>
+      <app-blog-summary></app-blog-summary>
+    </section> -->
 
     <section id="contact" >
-      <nz-list nzSize="small">
-        <div nz-row id="contact">
-          <h2 class="title-font">Contact me</h2>
-        </div>
-        <div nz-row *ngFor="let item of data">
-          <nz-list-item>
-            <span class="body-font">{{item.title}}</span>
-          </nz-list-item>
-        </div>
-      </nz-list>
+      <app-contact [isLanding]="true"></app-contact>
     </section>
 
   </nz-content>
 
 
-  <nz-sider *ngIf="!isMobile" nzWidth="200">
-    <nz-anchor nzOffsetTop="20">
+  <nz-sider nzWidth="200" *matches="'bigDevice'">
+    <nz-anchor nzOffsetTop="100">
       <nz-link nzHref="#summary" nzTitle="Home"></nz-link>
       <nz-link nzHref="#about" nzTitle="About Me"></nz-link>
       <nz-link nzHref="#skill" nzTitle="Skills"></nz-link>
       <nz-link nzHref="#qualification" nzTitle="Qualifications"></nz-link>
-      <nz-link nzHref="#portfolio" nzTitle="Portfolio"></nz-link>
-      <nz-link nzHref="#blog" nzTitle="Blog"></nz-link>
+      <!-- <nz-link nzHref="#portfolio" nzTitle="Portfolio"></nz-link> -->
+      <!-- <nz-link nzHref="#blog" nzTitle="Blog"></nz-link> -->
       <nz-link nzHref="#contact" nzTitle="Contact Me"></nz-link>
     </nz-anchor>
   </nz-sider>

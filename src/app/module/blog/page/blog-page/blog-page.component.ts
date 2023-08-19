@@ -7,25 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogPageComponent implements OnInit {
 
-  src = "/assets/fbprofilepic.jpg";
-  data = [
-    {
-      title: 'Melaka, Malaysia'
-    },
-    {
-      title: 'LinkedIn'
-    },
-    {
-      title: 'Github'
-    },
-    {
-      title: 'Facebook'
-    },
-    {
-      title: 'Whatsapp'
-    },
-  ]
-
   constructor() { }
 
   ngOnInit(): void {

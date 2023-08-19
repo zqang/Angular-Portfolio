@@ -1,8 +1,18 @@
-<div>
-  <button nz-button nzType="default" nzSize="default" nzShape="round" (click)="navigateBack()">Back <span nz-icon nzType="rollback"></span></button>
-</div>
+
+
 
 <div *ngIf="blogPost$ | async; let blogPost">
+  <div nz-row nzAlign="top" nzJustify="space-around" style="padding: 10px;">
+    <nz-breadcrumb nz-col nzXs="24" nzSm="24" nzMd="12" nzLg="12" nzXl="12" [nzSpan]="12">
+      <nz-breadcrumb-item>
+        <a [routerLink]="['../']">Blogs</a>
+      </nz-breadcrumb-item>
+      <nz-breadcrumb-item>{{blogPost.title}}</nz-breadcrumb-item>
+    </nz-breadcrumb>
+    <div nz-col nzXs="24" nzSm="24" nzMd="12" nzLg="12" nzXl="12" [nzSpan]="12" style="display: flex; justify-content: end;">
+      <button nz-button nzType="default" nzSize="default" nzShape="round" (click)="navigateBack()">Back <span nz-icon nzType="rollback"></span></button>
+    </div>
+  </div>
   <div class="title-blog">
     <h1>{{blogPost.title}}</h1>
   </div>

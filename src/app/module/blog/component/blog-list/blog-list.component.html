@@ -1,9 +1,9 @@
-<nz-list nzItemLayout="vertical">
-  <nz-list-item *ngFor="let blogPost of blogPosts$ | async; let i = index" style="flex-direction: column; cursor: pointer;" (click)="navigateBlogDetail(i)">
+<nz-list nzItemLayout="vertical" *matches="'bigDevice'">
+  <nz-list-item *ngFor="let blogPost of blogPosts$ | async" style="flex-direction: column; cursor: pointer;" (click)="onNavigateBlog(blogPost.id ? blogPost.id.toString() : '')">
     <nz-list-item-meta>
       <!-- <nz-list-item-meta-avatar [nzSrc]="blogPost.avatar"></nz-list-item-meta-avatar> -->
       <nz-list-item-meta-title>
-        <a [routerLink]="[(blogPost.id+1).toString()]">{{ blogPost.title }}</a>
+        <a (click)="onNavigateBlog(blogPost.id ? blogPost.id.toString() : '')">{{ blogPost.title }}</a>
         <!-- <a href="{{ blogPost.href }}">{{ blogPost.title }}</a> -->
       </nz-list-item-meta-title>
       <nz-list-item-meta-description>
@@ -31,4 +31,19 @@
     </nz-list-item-extra> -->
   </nz-list-item>
   <nz-list-empty *ngIf="blogPosts$ == undefined"></nz-list-empty>
+</nz-list>
+
+<nz-list nzItemLayout="vertical" *matches="'mobile'">
+  <nz-list-item *ngFor="let blogPost of blogPosts$ | async" (click)="onNavigateBlog(blogPost.id ? blogPost.id.toString() : '')">
+    <div nz-row>
+      <nz-list-item-meta>
+        <nz-list-item-meta-title>
+          <a>{{ blogPost.title }}</a>
+        </nz-list-item-meta-title>
+        <nz-list-item-meta-description>
+          {{ blogPost.content }}
+        </nz-list-item-meta-description>
+      </nz-list-item-meta>
+    </div>
+    </nz-list-item>
 </nz-list>

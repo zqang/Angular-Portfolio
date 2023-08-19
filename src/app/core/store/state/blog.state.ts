@@ -1,48 +1,114 @@
-
-import { State, Selector, StateContext, Action, createSelector } from '@ngxs/store';
+import { State, Selector, StateContext, Action } from '@ngxs/store';
 import { tap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
-import { BlogPost } from '../../../shared/model/blog';
-import { GetBlogPosts } from '../action/blog.action';
-import { BlogService } from '../../../shared/service/blog.service';
+import { GetBlog, GetBlogList, GetBlogPost, GetBlogPosts, SetAreBlogsLoaded } from '../action/blog.action';
+import { Blog, BlogPost, BlogPost_Defaults, Blog_Defaults } from 'src/app/shared/model/blog';
+import { BlogService } from 'src/app/shared/service/blog.service';
+
 
 export interface BlogStateModel {
+  blogs: Blog[];
   blogPosts: BlogPost[];
+  areBlogsLoaded: boolean;
+  blogPost: BlogPost;
+  blog: Blog;
 }
 
-const BlogStateDefaults: BlogStateModel = {
+const blogStateDefaults: BlogStateModel = {
+  blogs: [],
   blogPosts: [],
+  areBlogsLoaded: false,
+  blog: Blog_Defaults,
+  blogPost: BlogPost_Defaults
 };
 
 @State<BlogStateModel>({
-  name: 'Blog',
-  defaults: BlogStateDefaults,
+  name: 'blog',
+  defaults: blogStateDefaults,
 })
 @Injectable()
 export class BlogState {
 
+  @Selector()
+  static blog(state: BlogStateModel): Blog{
+    return state.blog;
+  }
 
   @Selector()
-  static blogPosts(state: BlogStateModel): BlogPost[] | null {
+  static blogs(state: BlogStateModel): Blog[]{
+    return state.blogs;
+  }
+
+  @Selector()
+  static blogPost(state: BlogStateModel): BlogPost{
+    return state.blogPost;
+  }
+
+  @Selector()
+  static blogPosts(state: BlogStateModel): BlogPost[]{
     return state.blogPosts;
   }
 
-  static blogPost(index: number) {
-    return createSelector([BlogState], (state: BlogStateModel) => {
-      return state.blogPosts.filter((value: BlogPost) => value.id === index)[0];
-    })
+  @Selector()
+  static areBlogsLoaded(state: BlogStateModel): boolean {
+      return state.areBlogsLoaded;
   }
 
   constructor(private blogService: BlogService) {}
 
-  @Action(GetBlogPosts)
-  GetBlogPosts(ctx: StateContext<BlogStateModel>, action: BlogPost) {
-    return this.blogService.getBlogPosts().pipe(
-      tap((result: BlogPost[]) => {
-        ctx.setState({
-          blogPosts: result
-        });
-      })
+  @Action(GetBlogList)
+    getBlogs({getState, setState}: StateContext<BlogStateModel>) {
+      return this.blogService.getBlogs().pipe(
+        tap(result => {
+          const state = getState();
+          setState({
+            ...state,
+            blogs: result,
+            areBlogsLoaded: true,
+          });
+        })
       );
     }
+
+  @Action(GetBlog)
+  getBlog({getState, setState}: StateContext<BlogStateModel>, action: GetBlog) {
+    const state = getState();
+    setState({
+      ...state,
+      blog: state.blogs.filter((data) => { return data.id === action.payload})[0]
+    })
+  }
+
+
+  @Action(GetBlogPosts)
+  getBlogPosts({getState, setState}: StateContext<BlogStateModel>) {
+    return this.blogService.getBlogPosts().pipe(
+      tap((result : BlogPost[])=> {
+        const state = getState();
+        setState({
+          ...state,
+          blogPosts: result,
+          areBlogsLoaded: true,
+        });
+      })
+    );
+  }
+
+@Action(GetBlogPost)
+getBlogPost({getState, setState}: StateContext<BlogStateModel>, action: GetBlogPost) {
+  const state = getState();
+  setState({
+    ...state,
+    blogPost: state.blogPosts.filter((data) => { return data.id.toString() === action.payload})[0]
+  })
+}
+
+  @Action(SetAreBlogsLoaded)
+  setAreBlogsLoaded({getState, setState}: StateContext<BlogStateModel>, action: SetAreBlogsLoaded) {
+    const state = getState();
+    setState({
+      ...state,
+      areBlogsLoaded: action.payload
+    })
+  }
 }

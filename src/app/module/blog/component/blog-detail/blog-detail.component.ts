@@ -10,14 +10,8 @@ import { BlogState } from 'src/app/core/store/state/blog.state';
   styleUrls: ['./blog-detail.component.scss']
 })
 export class BlogDetailComponent implements OnInit {
-  blogPost$ : Observable<BlogPost> | undefined;
+  @Select(BlogState.blogPost)blogPost$!: Observable<BlogPost>;
   constructor(private route: ActivatedRoute, private router: Router, private store: Store) {
-    const id = parseInt(this.route.snapshot.paramMap.get('id') || '');
-    if (id > 0){
-      this.blogPost$ = this.store.select(BlogState.blogPost(id));
-    }else{
-      //display error information
-    }
   }
 
   ngOnInit(): void {

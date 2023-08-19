@@ -14,49 +14,49 @@ nz-content{
 }
 
 .profile-pic{
-  position: absolute;
-  top: 200px;
-  left: 150px;
-  width: 50%;
-}
-
-.blob{
   position: relative;
   width: 100%;
+  height: auto;
+  margin-top: 30px;
 }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .profile-pic{
-    position: absolute;
-    top: 200px;
-    left: 150px;
-    width: 100%;
-  }
-
-  .blob{
     position: relative;
-    width: 100%;
+    width: 50%;
   }
 
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-
+  .profile-pic{
+    position: relative;
+    width: 70%;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-
+  .profile-pic{
+    position: relative;
+    width: 80%;
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-
+  .profile-pic{
+    position: relative;
+    width: 100%;
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-
+  .profile-pic{
+    position: relative;
+    width: 100%;
+  }
 }

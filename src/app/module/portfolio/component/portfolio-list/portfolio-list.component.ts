@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Select, Store } from '@ngxs/store';
+import { Observable, Subscription, tap } from 'rxjs';
+import { BASE_URL } from 'src/app/shared/constant/url.constants';
 import { Portfolio } from '../../model/portfolio';
+import { GetPortfolio, GetPortfolioList, SetArePortfoliosLoaded } from '../../store/action/portfolio.action';
+import { PortfolioState } from '../../store/state/portfolio.state';
 
 @Component({
   selector: 'app-portfolio-list',
@@ -7,21 +13,38 @@ import { Portfolio } from '../../model/portfolio';
   styleUrls: ['./portfolio-list.component.scss']
 })
 export class PortfolioListComponent implements OnInit {
-  data: Portfolio[] = [];
+  @Select(PortfolioState.portfolios)portfolios$!: Observable<Portfolio[]>;
+  @Select(PortfolioState.arePortfoliosLoaded) arePortfoliosLoaded$! : Observable<boolean>;
 
-  ngOnInit(): void {
-    this.loadData(1);
+  arePortfolioLoadedSub!: Subscription;
+
+  baseUrl: string = BASE_URL
+
+  constructor(
+    private store: Store,
+    private router: Router,
+    private route: ActivatedRoute){}
+
+  ngOnInit() {
+    this.arePortfolioLoadedSub = this.arePortfoliosLoaded$.pipe(
+      tap((arePortfoliosLoaded) => {
+        if (!arePortfoliosLoaded) {
+          this.store.dispatch(new GetPortfolioList());
+        }
+      })
+    ).subscribe(value => {
+      console.log('done loaded', value)
+    });
   }
 
-  loadData(pi: number): void {
-    this.data = new Array(5).fill({}).map((_, index) => ({
-      href: 'http://ant.design',
-      title: `ant design part ${index} (page: ${pi})`,
-      avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-      description: 'Ant Design, a design language for background applications, is refined by Ant UED Team.',
-      content:
-        'We supply a series of design principles, practical patterns and high quality design resources ' +
-        '(Sketch and Axure), to help people create their product prototypes beautifully and efficiently.'
-    }));
+  ngOnDestroy() {
+    this.arePortfolioLoadedSub.unsubscribe();
+    // this.store.dispatch(new SetArePortfoliosLoaded(false));
   }
+
+  onNavigatePortfolio(id : string){
+    this.router.navigate([id], {relativeTo: this.route})
+    this.store.dispatch(new GetPortfolio(id))
+  }
+
 }

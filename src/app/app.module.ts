@@ -21,6 +21,7 @@ import { AppState } from './core/store/state/app.state';
 import { JwtModule } from '@auth0/angular-jwt';
 import { AuthGuard } from './auth-guard';
 import { BlogState } from './core/store/state/blog.state';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 registerLocaleData(en);
 
@@ -34,6 +35,7 @@ export function tokenGetter() {
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,

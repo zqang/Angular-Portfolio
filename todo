@@ -8,23 +8,59 @@ blog page and portfolio page
 - change blog content
 - add blog details page (open a new tab)
 
-dashboard page
+blog and portfolio detail
+
+<!-- dashboard page
 - blog/portfolio edit add list and edit button and delete button
-- create new add markdown editor and tag for blog/portfolio
+- create new add markdown editor and tag for blog/portfolio -->
 
 responsive design for mobile
 
-
 2. solve icon error in console
 
-3. add auth guard to dashboard page
+3. add auth guard to dashboard page (no need first)
 
 4. ngxs update and delete blog and portfolio (solve backend first)
 
 5. backend
-- use node js
-- api for auth jwt token
-- api for blog and portfolio
 - security
+- api for all data
 
-6.
+6. integrate api
+
+
+- about me
+- contact
+- remove recent portfolio/blog
+- portfolio/blog detail
+- deploy
+- data insert
+
+v1 static app only
+v2 responsive + more features
+v3 ...
+
+18/4
+- need add another way for thumbnail description and image (done)
+- need to use ngxs to transfer data from portfolio list to item (done)
+- need to get route to the child in portfolio list (done)
+
+19/4
+- need to modify portfolio detail page (done)
+- navigate to child route for portfolio (done)
+- put link to contact and add a new component (done)
+
+20/4
+- change for blog like portfolio (done)
+- modify home page portfolio and blog recent (not done)
+- website design - focus on layout and font responsive first (not done)
+
+21/4
+- focus on layout and font responsive first
+- focus on security
+
+
+22/4
+- header put menu dropdown when mobile
+- blog and portfolio remove sider when mobile and put on menu dropdown
+- modify the font and layout of blog and portfolio

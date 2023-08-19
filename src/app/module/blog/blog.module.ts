@@ -12,7 +12,7 @@ import { BlogDetailComponent } from './component/blog-detail/blog-detail.compone
   declarations: [
     BlogPageComponent,
     BlogListComponent,
-    BlogDetailComponent,
+    BlogDetailComponent
   ],
   imports: [
     SharedModule,

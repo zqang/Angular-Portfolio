@@ -1,0 +1,31 @@
+
+.fixed-contact{
+  position: fixed;
+  width: 200px;
+  height: 400px;
+  border: none;
+}
+
+.profile{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: black;
+
+  img{
+    width:100%;
+  }
+}
+
+.contact-title{
+  font-size: 1.3vw;
+}
+
+.contact-item{
+  font-size: 1vw;
+}
+
+.hover-color:hover{
+  color: #1990FF;
+}
