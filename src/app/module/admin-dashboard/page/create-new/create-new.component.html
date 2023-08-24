@@ -1,1 +1,23 @@
-<p>create-new works!</p>
+<div>
+  <form nz-form [formGroup]="blogForm" style="width: 40%;" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your title of your blog post!">
+        <nz-input-group>
+          <input type="text" nz-input formControlName="title" placeholder="Title" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your content of the post!">
+        <!-- <nz-input-group nzPrefixIcon="lock"> -->
+          <!-- <input type="password" nz-input formControlName="password" placeholder="Password" /> -->
+        <textarea nz-input formControlName="content" [nzAutosize]="true" placeholder="Input your content here..."></textarea>
+        <!-- </nz-input-group> -->
+      </nz-form-control>
+    </nz-form-item>
+    <div style="display: flex; gap: 10px;">
+      <button nz-button nzType="default" nzDanger nzShape="round" (click)="onNavigateBack()">Cancel</button>
+      <button nz-button [nzType]="'primary'" nzShape="round">Submit</button>
+    </div>
+  </form>
+</div>

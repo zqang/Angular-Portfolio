@@ -7,6 +7,7 @@ import { PortfolioEditComponent } from './page/portfolio-edit/portfolio-edit.com
 import { CreateNewComponent } from './page/create-new/create-new.component';
 import { DashboardComponent } from './page/dashboard/dashboard.component';
 import { BlogTableComponent } from './page/blog-table/blog-table.component';
+import { BlogLayoutComponent } from './layout/blog-layout/blog-layout.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { BlogTableComponent } from './page/blog-table/blog-table.component';
     PortfolioEditComponent,
     CreateNewComponent,
     DashboardComponent,
-    BlogTableComponent
+    BlogTableComponent,
+    BlogLayoutComponent
   ],
   imports: [
     SharedModule,

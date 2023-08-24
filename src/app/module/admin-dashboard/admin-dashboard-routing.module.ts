@@ -4,6 +4,8 @@ import { AdminDashboardLayoutComponent } from './layout/admin-dashboard-layout/a
 import {  BlogTableComponent } from './page/blog-table/blog-table.component';
 import { DashboardComponent } from './page/dashboard/dashboard.component';
 import { PortfolioEditComponent } from './page/portfolio-edit/portfolio-edit.component';
+import { CreateNewComponent } from './page/create-new/create-new.component';
+import { BlogLayoutComponent } from './layout/blog-layout/blog-layout.component';
 
 
 const routes: Routes = [
@@ -17,7 +19,12 @@ const routes: Routes = [
       },
       {
         path: 'blog-table',
-        component: BlogTableComponent,
+        component: BlogLayoutComponent,
+        children: [
+          {path: '', component: BlogTableComponent},
+          {path: ':id', component: CreateNewComponent},
+          {path: 'create', component: CreateNewComponent}
+        ]
       },
       {
         path: 'portfolio-table',

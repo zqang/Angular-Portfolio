@@ -1,3 +1,5 @@
+import { BlogPost } from "src/app/shared/model/blog";
+
 export class GetBlogList {
   static readonly type = '[Blog] Get Blog List';
 }
@@ -19,4 +21,20 @@ export class GetBlogPosts {
 export class GetBlogPost{
   static readonly type = '[Blog] Get a Blog Post';
   constructor(public payload: string){}
+}
+
+
+export class UpdateBlogPost {
+  static readonly type = '[Blog] Update BlogPost Post';
+  constructor(public payload: BlogPost){}
+}
+
+export class DeleteBlogPost {
+  static readonly type = '[Blog] Delete BlogPost Post';
+  constructor(public payload: number){}
+}
+
+export class AddBlogPost {
+  static readonly type = '[Blog] Add BlogPost Post';
+  constructor(public payload: BlogPost){}
 }

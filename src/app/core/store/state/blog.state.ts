@@ -1,7 +1,7 @@
 import { State, Selector, StateContext, Action } from '@ngxs/store';
 import { tap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
-import { GetBlog, GetBlogList, GetBlogPost, GetBlogPosts, SetAreBlogsLoaded } from '../action/blog.action';
+import { AddBlogPost, DeleteBlogPost, GetBlog, GetBlogList, GetBlogPost, GetBlogPosts, SetAreBlogsLoaded, UpdateBlogPost } from '../action/blog.action';
 import { Blog, BlogPost, BlogPost_Defaults, Blog_Defaults } from 'src/app/shared/model/blog';
 import { BlogService } from 'src/app/shared/service/blog.service';
 
@@ -14,7 +14,7 @@ export interface BlogStateModel {
   blog: Blog;
 }
 
-const blogStateDefaults: BlogStateModel = {
+export const blogStateDefaults: BlogStateModel = {
   blogs: [],
   blogPosts: [],
   areBlogsLoaded: false,
@@ -94,14 +94,14 @@ export class BlogState {
     );
   }
 
-@Action(GetBlogPost)
-getBlogPost({getState, setState}: StateContext<BlogStateModel>, action: GetBlogPost) {
-  const state = getState();
-  setState({
-    ...state,
-    blogPost: state.blogPosts.filter((data) => { return data.id.toString() === action.payload})[0]
-  })
-}
+  @Action(GetBlogPost)
+  getBlogPost({getState, setState}: StateContext<BlogStateModel>, action: GetBlogPost) {
+    const state = getState();
+    setState({
+      ...state,
+      blogPost: state.blogPosts.filter((data) => { return data.id.toString() === action.payload})[0]
+    })
+  }
 
   @Action(SetAreBlogsLoaded)
   setAreBlogsLoaded({getState, setState}: StateContext<BlogStateModel>, action: SetAreBlogsLoaded) {
@@ -111,4 +111,44 @@ getBlogPost({getState, setState}: StateContext<BlogStateModel>, action: GetBlogP
       areBlogsLoaded: action.payload
     })
   }
+
+  @Action(AddBlogPost)
+  addBlogPost({getState, patchState}: StateContext<BlogStateModel>, action: AddBlogPost) {
+    const state = getState();
+    return this.blogService.createBlogPost(action.payload).pipe(
+      tap((result: any) => {
+        console.log(result);
+        patchState({
+          blogPosts: [...state.blogPosts, action.payload]
+        });
+      })
+      );
+    }
+
+  @Action(UpdateBlogPost)
+  updateBlogPost({getState, patchState}: StateContext<BlogStateModel>, action: UpdateBlogPost) {
+    const state = getState();
+    return this.blogService.updateBlogPost(action.payload).pipe(
+      tap((result: any) => {
+        console.log(result);
+        patchState({
+          blogPosts: [...state.blogPosts.filter(
+            (value: BlogPost) => value.id !== action.payload.id), action.payload]
+        });
+      })
+      );
+    }
+
+  @Action(DeleteBlogPost)
+  deleteBlogPost({getState, patchState}: StateContext<BlogStateModel>, action: DeleteBlogPost) {
+    const state = getState();
+    return this.blogService.deleteBlogPost(action.payload).pipe(
+      tap((result: any) => {
+        console.log(result);
+        patchState({
+          blogPosts: state.blogPosts.filter((value: BlogPost) => value.id !== action.payload)
+        });
+      })
+      );
+    }
 }
