@@ -50,7 +50,7 @@ export class BlogTableComponent implements OnInit {
     if(!id){
       this.router.navigate(['create'], {relativeTo: this.route});
     }else{
-      this.router.navigate([id], {relativeTo: this.route});
+      this.router.navigate([`edit/${id}`], {relativeTo: this.route});
       this.store.dispatch(new GetBlogPost(id));
     }
   }

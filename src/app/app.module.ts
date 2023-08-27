@@ -22,6 +22,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { AuthGuard } from './auth-guard';
 import { BlogState } from './core/store/state/blog.state';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 registerLocaleData(en);
 
@@ -53,7 +54,7 @@ export function tokenGetter() {
         allowedDomains: [environment.JWT_ALLOWED_DOMAIN],
         disallowedRoutes: []
       }
-    })
+    }),
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }, PathResolveService, AuthGuard],
   bootstrap: [AppComponent]

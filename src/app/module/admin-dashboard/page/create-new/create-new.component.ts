@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { AddBlogPost, UpdateBlogPost } from 'src/app/core/store/action/blog.action';
+import { AddBlogPost, GetBlogPost, GetBlogPosts, UpdateBlogPost } from 'src/app/core/store/action/blog.action';
 import { BlogState } from 'src/app/core/store/state/blog.state';
 import { BlogPost } from 'src/app/shared/model/blog';
 
@@ -23,7 +23,10 @@ export class CreateNewComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute
   ) {
-    this.paramId = this.route.snapshot.params['id'];
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      this.paramId = params.get('id')
+    });
+    console.log(this.paramId)
   }
 
   submitForm(): void {
@@ -33,10 +36,12 @@ export class CreateNewComponent implements OnInit {
         blogFormValues.id = parseInt(this.paramId);
         console.log(blogFormValues);
         this.store.dispatch(new UpdateBlogPost(blogFormValues)).subscribe((data) => {
+          this.store.dispatch(new GetBlogPosts());
           this.router.navigate(['..'], {relativeTo: this.route});
         });
       }else {
         this.store.dispatch(new AddBlogPost(this.blogForm.getRawValue())).subscribe((data) => {
+          this.store.dispatch(new GetBlogPosts());
           this.router.navigate(['..'], {relativeTo: this.route});
        });
       }
@@ -68,6 +73,6 @@ export class CreateNewComponent implements OnInit {
 
 
   onNavigateBack() : void {
-    this.router.navigate(['..'], {relativeTo: this.route});
+    this.router.navigate(['/dashboard/blog-table']);
   }
 }

@@ -7,6 +7,8 @@ import { AnchorComponent } from './component/anchor/anchor.component';
 import { MatchesDirective } from './directive/match.directive';
 import { ContactComponent } from './component/contact/contact.component';
 import { LoadingSpinnerComponent } from './component/loading-spinner/loading-spinner.component';
+import { CkeeditorComponent } from './component/ckeeditor/ckeeditor.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 
 
@@ -15,7 +17,8 @@ import { LoadingSpinnerComponent } from './component/loading-spinner/loading-spi
     AnchorComponent,
     MatchesDirective,
     ContactComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    CkeeditorComponent
   ],
   imports: [
     CommonModule,
@@ -23,6 +26,7 @@ import { LoadingSpinnerComponent } from './component/loading-spinner/loading-spi
     RouterModule,
     ZorroModule,
     ReactiveFormsModule,
+    CKEditorModule,
   ],
   exports: [
     AnchorComponent,
@@ -33,7 +37,8 @@ import { LoadingSpinnerComponent } from './component/loading-spinner/loading-spi
     ReactiveFormsModule,
     MatchesDirective,
     ContactComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    CkeeditorComponent
   ]
 })
 export class SharedModule { }

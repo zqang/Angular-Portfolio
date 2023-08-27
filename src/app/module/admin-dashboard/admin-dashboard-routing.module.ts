@@ -22,7 +22,7 @@ const routes: Routes = [
         component: BlogLayoutComponent,
         children: [
           {path: '', component: BlogTableComponent},
-          {path: ':id', component: CreateNewComponent},
+          {path: 'edit/:id', component: CreateNewComponent},
           {path: 'create', component: CreateNewComponent}
         ]
       },
