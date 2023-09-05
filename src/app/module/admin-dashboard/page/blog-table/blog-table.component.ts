@@ -4,7 +4,7 @@ import { Observable, Subscription, tap } from 'rxjs';
 import { BlogPost } from 'src/app/shared/model/blog';
 import { BlogState } from 'src/app/core/store/state/blog.state';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DeleteBlogPost, GetBlogPost, GetBlogPosts } from 'src/app/core/store/action/blog.action';
+import { DeleteBlogPost, GetBlogPost, GetBlogPosts, SetAreBlogsLoaded } from 'src/app/core/store/action/blog.action';
 import { NzModalService } from 'ng-zorro-antd/modal';
 
 @Component({
@@ -31,7 +31,6 @@ export class BlogTableComponent implements OnInit {
     this.areBlogsLoadedSub = this.areBlogsLoaded$.pipe(
       tap((areBlogsLoaded) => {
         if (!areBlogsLoaded) {
-          // this.store.dispatch(new GetBlogList());
           this.store.dispatch(new GetBlogPosts());
         }
       })
@@ -42,7 +41,7 @@ export class BlogTableComponent implements OnInit {
 
   ngOnDestroy() {
     this.areBlogsLoadedSub.unsubscribe();
-    // this.store.dispatch(new SetAreBlogsLoaded(false));
+    this.store.dispatch(new SetAreBlogsLoaded(false)); //check if got any error or not
   }
 
 

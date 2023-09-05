@@ -3,9 +3,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Select, Store } from '@ngxs/store';
 import { Observable, Subscription, tap } from 'rxjs';
 import { BASE_URL } from 'src/app/shared/constant/url.constants';
-import { Portfolio } from '../../model/portfolio';
-import { GetPortfolio, GetPortfolioList, SetArePortfoliosLoaded } from '../../store/action/portfolio.action';
-import { PortfolioState } from '../../store/state/portfolio.state';
+import { Portfolio } from '../../../../shared/model/portfolio';
+import { GetPortfolio, GetPortfolios, SetArePortfoliosLoaded } from '../../../../core/store/action/portfolio.action';
+import { PortfolioState } from '../../../../core/store/state/portfolio.state';
 
 @Component({
   selector: 'app-portfolio-list',
@@ -18,6 +18,8 @@ export class PortfolioListComponent implements OnInit {
 
   arePortfolioLoadedSub!: Subscription;
 
+  public isEmptyPortfolios : boolean = false;
+
   baseUrl: string = BASE_URL
 
   constructor(
@@ -29,12 +31,16 @@ export class PortfolioListComponent implements OnInit {
     this.arePortfolioLoadedSub = this.arePortfoliosLoaded$.pipe(
       tap((arePortfoliosLoaded) => {
         if (!arePortfoliosLoaded) {
-          this.store.dispatch(new GetPortfolioList());
+          this.store.dispatch(new GetPortfolios());
         }
       })
     ).subscribe(value => {
       console.log('done loaded', value)
     });
+
+    this.portfolios$.subscribe((portfolios: Portfolio[]) => {
+      this.isEmptyPortfolios = portfolios.length == 0;
+  })
   }
 
   ngOnDestroy() {
@@ -43,8 +49,7 @@ export class PortfolioListComponent implements OnInit {
   }
 
   onNavigatePortfolio(id : string){
-    this.router.navigate([id], {relativeTo: this.route})
-    this.store.dispatch(new GetPortfolio(id))
+    // this.router.navigate([id], {relativeTo: this.route})
   }
 
 }

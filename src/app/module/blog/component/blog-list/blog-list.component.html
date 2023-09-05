@@ -30,7 +30,7 @@
       <img style="max-width: 272px; height: auto;" width="100%" alt="logo" src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png" />
     </nz-list-item-extra> -->
   </nz-list-item>
-  <nz-list-empty *ngIf="blogPosts$ == undefined"></nz-list-empty>
+  <nz-list-empty *ngIf="isEmptyBlogPosts"></nz-list-empty>
 </nz-list>
 
 <nz-list nzItemLayout="vertical" *matches="'mobile'">

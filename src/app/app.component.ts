@@ -1,6 +1,6 @@
 import { Component, HostListener, NgZone, OnInit } from '@angular/core';
 import { Store } from '@ngxs/store';
-import { SetArePortfoliosLoaded } from './module/portfolio/store/action/portfolio.action';
+import { SetArePortfoliosLoaded } from './core/store/action/portfolio.action';
 import { SetAreBlogsLoaded } from './core/store/action/blog.action';
 
 @Component({

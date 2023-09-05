@@ -1,40 +1,45 @@
 <nz-list nzItemLayout="vertical" *matches="'bigDevice'">
-  <nz-list-item *ngFor="let item of portfolios$ | async">
+  <nz-list-item *ngFor="let portfolio of portfolios$ | async" style="flex-direction: column; cursor: pointer;" (click)="onNavigatePortfolio(portfolio.id ? portfolio.id.toString() : '')">
     <nz-list-item-meta>
+      <!-- <nz-list-item-meta-avatar [nzSrc]="portfolio.avatar"></nz-list-item-meta-avatar> -->
       <nz-list-item-meta-title>
-        <a (click)="onNavigatePortfolio(item.id ? item.id : '')">{{ item.name }}</a>
+        <a (click)="onNavigatePortfolio(portfolio.id ? portfolio.id.toString() : '')">{{ portfolio.title }}</a>
+        <!-- <a href="{{ portfolio.href }}">{{ portfolio.title }}</a> -->
       </nz-list-item-meta-title>
       <nz-list-item-meta-description>
-        {{ item.description }}
+        {{ portfolio.description }}
       </nz-list-item-meta-description>
     </nz-list-item-meta>
-    {{item.thumbnail_text}}
-    <nz-list-item-extra>
-      <img *ngIf="item.image != null; else thumbnail_image" width="250" alt="logo" [src]="this.baseUrl + item.image" />
-    </nz-list-item-extra>
-    <ng-template #thumbnail_image>
-      <img *ngIf="item.thumbnail_image != null" width="250" alt="logo" [src]="item.thumbnail_image" />
-    </ng-template>
+
+    <!-- {{ portfolio.content }} -->
+    <ul style="margin-left: 0; margin-bottom: 10px;" nz-list-item-actions>
+      <nz-list-item-action>
+        <i nz-icon nzType="star" nzTheme="outline" style="margin-right: 8px;"></i>
+        1563212
+      </nz-list-item-action>
+      <nz-list-item-action>
+        <i nz-icon nzType="message" nzTheme="outline" style="margin-right: 8px;"></i>
+        156321
+      </nz-list-item-action>
+    </ul>
+    <!-- <nz-list-item-extra>
+      <img style="max-width: 272px; height: auto;" width="100%" alt="logo" src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png" />
+    </nz-list-item-extra> -->
   </nz-list-item>
+  <nz-list-empty *ngIf="isEmptyPortfolios"></nz-list-empty>
 </nz-list>
 
 <nz-list nzItemLayout="vertical" *matches="'mobile'">
-  <nz-list-item *ngFor="let item of portfolios$ | async">
-    <div nz-row>
-      <nz-list-item-extra>
-        <img width="272" alt="logo" [src]="item.thumbnail_image" />
-      </nz-list-item-extra>
-    </div>
+  <nz-list-item *ngFor="let portfolio of portfolios$ | async" (click)="onNavigatePortfolio(portfolio.id ? portfolio.id.toString() : '')">
     <div nz-row>
       <nz-list-item-meta>
         <nz-list-item-meta-title>
-          <a>{{ item.name }}</a>
+          <a>{{ portfolio.title }}</a>
         </nz-list-item-meta-title>
         <nz-list-item-meta-description>
-          {{ item.description }}
+          {{ portfolio.description }}
         </nz-list-item-meta-description>
       </nz-list-item-meta>
-      {{item.thumbnail_text}}
     </div>
     </nz-list-item>
 </nz-list>
