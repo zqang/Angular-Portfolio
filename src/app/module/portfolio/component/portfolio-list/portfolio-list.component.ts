@@ -6,6 +6,7 @@ import { BASE_URL } from 'src/app/shared/constant/url.constants';
 import { Portfolio } from '../../../../shared/model/portfolio';
 import { GetPortfolio, GetPortfolios, SetArePortfoliosLoaded } from '../../../../core/store/action/portfolio.action';
 import { PortfolioState } from '../../../../core/store/state/portfolio.state';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 
 @Component({
   selector: 'app-portfolio-list',
@@ -25,7 +26,8 @@ export class PortfolioListComponent implements OnInit {
   constructor(
     private store: Store,
     private router: Router,
-    private route: ActivatedRoute){}
+    private route: ActivatedRoute,
+    private notification: NzNotificationService){}
 
   ngOnInit() {
     this.arePortfolioLoadedSub = this.arePortfoliosLoaded$.pipe(
@@ -48,8 +50,18 @@ export class PortfolioListComponent implements OnInit {
     // this.store.dispatch(new SetArePortfoliosLoaded(false));
   }
 
-  onNavigatePortfolio(id : string){
-    // this.router.navigate([id], {relativeTo: this.route})
+  onNavigatePortfolio(githubUrl : string){
+    //for the first statement is to check whether the external link is valid or not.
+    if (githubUrl == ''){
+      this.notification.create(
+        "Warning",
+        'No External Links Provided',
+        'There is no external link to the portfolio. Please contact the administrator to upload the link.'
+      );
+    }
+    else {
+      window.open(githubUrl, "_blank")
+    }
   }
 
 }

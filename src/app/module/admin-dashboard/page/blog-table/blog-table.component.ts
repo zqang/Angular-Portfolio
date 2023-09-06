@@ -14,7 +14,6 @@ import { NzModalService } from 'ng-zorro-antd/modal';
 })
 export class BlogTableComponent implements OnInit {
 
-
   @Select(BlogState.blogPosts)blogPosts$!: Observable<BlogPost[]>;
   @Select(BlogState.areBlogsLoaded) areBlogsLoaded$! : Observable<boolean>;
 

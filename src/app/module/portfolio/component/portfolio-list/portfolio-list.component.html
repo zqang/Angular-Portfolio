@@ -1,9 +1,9 @@
 <nz-list nzItemLayout="vertical" *matches="'bigDevice'">
-  <nz-list-item *ngFor="let portfolio of portfolios$ | async" style="flex-direction: column; cursor: pointer;" (click)="onNavigatePortfolio(portfolio.id ? portfolio.id.toString() : '')">
+  <nz-list-item *ngFor="let portfolio of portfolios$ | async" style="flex-direction: column; cursor: pointer;" (click)="onNavigatePortfolio(portfolio.githubUrl ? portfolio.githubUrl.toString() : '')">
     <nz-list-item-meta>
       <!-- <nz-list-item-meta-avatar [nzSrc]="portfolio.avatar"></nz-list-item-meta-avatar> -->
       <nz-list-item-meta-title>
-        <a (click)="onNavigatePortfolio(portfolio.id ? portfolio.id.toString() : '')">{{ portfolio.title }}</a>
+        <a (click)="onNavigatePortfolio(portfolio.githubUrl ? portfolio.githubUrl.toString() : '')">{{ portfolio.title }}</a>
         <!-- <a href="{{ portfolio.href }}">{{ portfolio.title }}</a> -->
       </nz-list-item-meta-title>
       <nz-list-item-meta-description>
@@ -30,7 +30,7 @@
 </nz-list>
 
 <nz-list nzItemLayout="vertical" *matches="'mobile'">
-  <nz-list-item *ngFor="let portfolio of portfolios$ | async" (click)="onNavigatePortfolio(portfolio.id ? portfolio.id.toString() : '')">
+  <nz-list-item *ngFor="let portfolio of portfolios$ | async" (click)="onNavigatePortfolio(portfolio.githubUrl ? portfolio.githubUrl.toString() : '')">
     <div nz-row>
       <nz-list-item-meta>
         <nz-list-item-meta-title>

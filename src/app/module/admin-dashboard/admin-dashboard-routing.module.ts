@@ -6,6 +6,8 @@ import { DashboardComponent } from './page/dashboard/dashboard.component';
 import { PortfolioEditComponent } from './page/portfolio-edit/portfolio-edit.component';
 import { CreateNewComponent } from './page/create-new/create-new.component';
 import { BlogLayoutComponent } from './layout/blog-layout/blog-layout.component';
+import { PortfolioLayoutComponent } from './layout/portfolio-layout/portfolio-layout.component';
+import { PortfolioTableComponent } from './page/portfolio-table/portfolio-table.component';
 
 
 const routes: Routes = [
@@ -28,7 +30,12 @@ const routes: Routes = [
       },
       {
         path: 'portfolio-table',
-        component: PortfolioEditComponent,
+        component: PortfolioLayoutComponent,
+        children: [
+          {path: '', component: PortfolioTableComponent},
+          {path: 'edit/:id', component: PortfolioEditComponent},
+          {path: 'create', component: PortfolioEditComponent}
+        ]
       }
     ]
   },

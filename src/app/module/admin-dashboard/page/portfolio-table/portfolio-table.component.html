@@ -1,0 +1,30 @@
+<div style="display: flex; flex-direction: column; gap: 8px;">
+  <div nz-row >
+    <button (click)="onNavigate()" nz-button nzSize="large" nzShape="round" nzType="primary">Add new portfolio</button>
+  </div>
+
+  <nz-table #portfolioTable *ngIf="portfolios$ | async as portfolio">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Github Url</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of portfolio">
+        <td>{{ data.id }}</td>
+        <td>{{ data.title }}</td>
+        <td>{{ data.description }}</td>
+        <td>{{ data.githubUrl }}</td>
+        <td>
+          <a routerLink="" (click)="onNavigate(data.id.toString())"><span nz-icon nzType="edit" nzTheme="outline"></span>Edit</a>
+          <nz-divider nzType="vertical"></nz-divider>
+          <a href="javascript:void(0)" (click)="deletePortfolio(data.id)" style="color: #c50909;"><span nz-icon nzType="delete" nzTheme="outline"></span>Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>

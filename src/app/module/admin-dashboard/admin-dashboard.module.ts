@@ -8,6 +8,8 @@ import { CreateNewComponent } from './page/create-new/create-new.component';
 import { DashboardComponent } from './page/dashboard/dashboard.component';
 import { BlogTableComponent } from './page/blog-table/blog-table.component';
 import { BlogLayoutComponent } from './layout/blog-layout/blog-layout.component';
+import { PortfolioTableComponent } from './page/portfolio-table/portfolio-table.component';
+import { PortfolioLayoutComponent } from './layout/portfolio-layout/portfolio-layout.component';
 
 
 @NgModule({
@@ -15,10 +17,12 @@ import { BlogLayoutComponent } from './layout/blog-layout/blog-layout.component'
     AdminDashboardLayoutComponent,
     MarkdownEditorComponent,
     PortfolioEditComponent,
+    PortfolioTableComponent,
     CreateNewComponent,
     DashboardComponent,
     BlogTableComponent,
-    BlogLayoutComponent
+    BlogLayoutComponent,
+    PortfolioLayoutComponent
   ],
   imports: [
     SharedModule,

@@ -44,13 +44,14 @@ export class PortfolioState {
   @Action(GetPortfolios)
     getPortfolios({getState, setState}: StateContext<PortfolioStateModel>) {
       return this.portfolioService.getPortfolios().pipe(
-        tap(result => {
+        tap((result : Portfolio[]) => {
           const state = getState();
           setState({
             ...state,
             portfolios: result,
             arePortfoliosLoaded: true,
           });
+          console.log(result);
         })
       );
     }

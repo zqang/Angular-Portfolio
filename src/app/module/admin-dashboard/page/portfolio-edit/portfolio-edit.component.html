@@ -1,1 +1,33 @@
-<p>portfolio-edit works!</p>
+<div>
+  <form nz-form [formGroup]="portfolioForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your title of your portfolio!">
+        <nz-input-group>
+          <input type="text" nz-input formControlName="title" placeholder="Title" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your description of the post!">
+        <!-- <nz-input-group nzPrefixIcon="lock"> -->
+          <!-- <input type="password" nz-input formControlName="password" placeholder="Password" /> -->
+          <textarea nz-input formControlName="description" [nzAutosize]="true" placeholder="Input your description here..."></textarea>
+        <!-- </nz-input-group> -->
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your Github link of your portfolio!">
+        <nz-input-group>
+          <input type="text" nz-input formControlName="githubUrl" placeholder="URL" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+
+    <div style="display: flex; gap: 10px;">
+      <button nz-button nzType="default" nzDanger nzShape="round" (click)="onNavigateBack()">Cancel</button>
+      <button nz-button [nzType]="'primary'" nzShape="round">Submit</button>
+    </div>
+  </form>
+</div>
+
+

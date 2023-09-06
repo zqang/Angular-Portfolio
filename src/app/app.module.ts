@@ -23,6 +23,7 @@ import { AuthGuard } from './auth-guard';
 import { BlogState } from './core/store/state/blog.state';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { PortfolioState } from './core/store/state/portfolio.state';
 
 registerLocaleData(en);
 
@@ -41,7 +42,7 @@ export function tokenGetter() {
     BrowserAnimationsModule,
     SharedModule,
     CoreModule,
-    NgxsModule.forRoot([AppState, BlogState]),
+    NgxsModule.forRoot([AppState, BlogState, PortfolioState]),
     NgxsStoragePluginModule.forRoot(),
     NgxsRouterPluginModule.forRoot(),
     NgxsReduxDevtoolsPluginModule.forRoot(),
