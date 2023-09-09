@@ -5,4 +5,31 @@
     development. I have graduated from University Malaya Malaysia. My degree is Computer Science and major in
     Artificial Intelligence.
   </p>
+  <button (click)="openContactFormModal()" class="contact-button">
+    <span class="tertiary-font">Contact Me</span>
+    <span nz-icon nzType="swap-right" nzTheme="outline"></span>
+  </button>
 </div>
+
+
+<nz-modal [(nzVisible)]="isContactModalVisible" nzCentered nzTitle="Contact Form" [nzFooter]="null" (nzOnCancel)="handleCancel()">
+  <ng-container *nzModalContent>
+    <form nz-form [formGroup]="contactForm" (ngSubmit)="submitForm()">
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your email!">
+            <input class="form-email tertiary-font" type="email" nz-input formControlName="email" placeholder="Email" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your enquiry!">
+            <input type="text" class="form-enquiry tertiary-font" nz-input formControlName="enquiry" placeholder="Enquiry" />
+        </nz-form-control>
+      </nz-form-item>
+      <div class="button-group">
+        <button class="tertiary-font cancel-button">Cancel</button>
+        <button class="tertiary-font submit-form-button">Submit</button>
+      </div>
+    </form>
+  </ng-container>
+</nz-modal>
+
