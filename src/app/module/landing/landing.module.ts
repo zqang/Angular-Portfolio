@@ -10,6 +10,7 @@ import { SkillsComponent } from './component/skills/skills.component';
 import { QualificationsComponent } from './component/qualifications/qualifications.component';
 import { BriefPortfolioComponent } from './component/brief-portfolio/brief-portfolio.component';
 import { BlogSummaryComponent } from './component/blog-summary/blog-summary.component';
+import { TechStackComponent } from './component/tech-stack/tech-stack.component';
 
 
 
@@ -24,6 +25,7 @@ import { BlogSummaryComponent } from './component/blog-summary/blog-summary.comp
     QualificationsComponent,
     BriefPortfolioComponent,
     BlogSummaryComponent,
+    TechStackComponent,
   ],
   imports: [
     SharedModule,

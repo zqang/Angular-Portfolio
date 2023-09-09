@@ -1,4 +1,4 @@
-1. UI
+1. UI done
 home page
 - about me section
 - portfolio section
@@ -16,17 +16,17 @@ blog and portfolio detail
 
 responsive design for mobile
 
-2. solve icon error in console
+2. solve icon error in console done
 
-3. add auth guard to dashboard page (no need first)
+3. add auth guard to dashboard page (no need first) done
 
-4. ngxs update and delete blog and portfolio (solve backend first)
+4. ngxs update and delete blog and portfolio (solve backend first) done
 
 5. backend
 - security
 - api for all data
 
-6. integrate api
+6. integrate api done
 
 
 - about me
@@ -64,3 +64,24 @@ v3 ...
 - header put menu dropdown when mobile
 - blog and portfolio remove sider when mobile and put on menu dropdown
 - modify the font and layout of blog and portfolio
+
+
+7/9
+- done integrate all api and also build all the page inside
+
+9/9
+- redesign the landing page
+- add in new todo list
+
+todo
+- check the github url passed to here whether is valid or not in backend and frontend
+- add category, tag and also filter search function for whole system
+- responsive design, redesign the portfolio ui
+- deploy to online with setup record inside blog
+- do note on az-104
+- set the contact me link only include github, whatsapp, gmail
+- set the contact me as button below the summary section
+- about me add more detail and image
+- tech stack reorganize the layout
+- blob shape more verbose
+

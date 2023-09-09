@@ -1,29 +1,42 @@
 <nz-back-top></nz-back-top>
+<section id="summary" class="top-section top-view" *matches="'bigDevice'">
+  <div nz-row class="flex-summary">
+    <div nz-col class="image"><img class="profile-pic" nz-image [nzSrc]="src" [nzPlaceholder]="placeholder"></div>
+    <div nz-col nzOffset="2" nzXs="22" nzSm="20" nzMd="18" nzLg="16" nzXl="16">
+      <app-career-summary></app-career-summary>
+    </div>
+  </div>
+</section>
+
+<section id="summary" class="top-section top-view" *matches="'mobile'">
+  <div nz-col class="flex-summary-mobile">
+    <div nz-row class="image"><img class="profile-pic" nz-image [nzSrc]="src" [nzPlaceholder]="placeholder"></div>
+    <div nz-row>
+      <app-career-summary></app-career-summary>
+    </div>
+  </div>
+</section>
 <nz-layout>
 
   <nz-content>
-    <section id="summary" class="section top-section">
-      <div nz-row>
-        <div nz-col nzXs="24" nzSm="22" nzMd="20" nzLg="12" nzXl="12" class="image">
-          <img class="profile-pic" nz-image  [nzSrc]="src" [nzPlaceholder]="placeholder" />
-        </div>
-        <div nz-col nzXs="24" nzSm="22" nzMd="20" nzLg="12" nzXl="12">
-          <app-career-summary></app-career-summary>
-        </div>
-      </div>
-    </section>
+
+
 
     <div id="about" class="section">
       <app-about-me></app-about-me>
     </div>
 
-    <div id="skill" class="section">
+    <!-- <div id="skill" class="section">
       <app-skills></app-skills>
+    </div> -->
+
+    <div id="tech-stack" class="section">
+      <app-tech-stack></app-tech-stack>
     </div>
 
-    <div id="qualification" class="section">
+    <!-- <div id="qualification" class="section">
       <app-qualifications></app-qualifications>
-    </div>
+    </div> -->
 
     <!-- <section id="portfolio" class="section">
       <app-brief-portfolio></app-brief-portfolio>
@@ -41,17 +54,32 @@
 
 
   <nz-sider nzWidth="200" *matches="'bigDevice'">
-    <nz-anchor nzOffsetTop="100">
-      <nz-link nzHref="#summary" nzTitle="Home"></nz-link>
-      <nz-link nzHref="#about" nzTitle="About Me"></nz-link>
-      <nz-link nzHref="#skill" nzTitle="Skills"></nz-link>
-      <nz-link nzHref="#qualification" nzTitle="Qualifications"></nz-link>
+    <!-- <nz-link class="tertiary-font" nzHref="#summary" nzTitle="Home"></nz-link> -->
+    <div class="link-group">
+      <a href="javascript:void(0)" (click)="scrollToAnchroingPosition('summary')">Home</a>
+      <!-- <nz-link nzHref="#about" nzTitle="About Me"></nz-link> -->
+      <a href="javascript:void(0)" (click)="scrollToAnchroingPosition('about')">About Me</a>
+      <!-- <nz-link nzHref="#skill" nzTitle="Skills"></nz-link> -->
+      <!-- <a href="javascript:void(0)" (click)="scrollToAnchroingPosition('skill')">Skills</a> -->
+      <a href="javascript:void(0)" (click)="scrollToAnchroingPosition('tech-stack')">Tech Stack</a>
+      <!-- <nz-link nzHref="#qualification" nzTitle="Qualifications"></nz-link> -->
+      <!-- <a href="javascript:void(0)" (click)="scrollToAnchroingPosition('qualification')">Qualifications</a> -->
       <!-- <nz-link nzHref="#portfolio" nzTitle="Portfolio"></nz-link> -->
       <!-- <nz-link nzHref="#blog" nzTitle="Blog"></nz-link> -->
-      <nz-link nzHref="#contact" nzTitle="Contact Me"></nz-link>
+      <!-- <nz-link nzHref="#contact" nzTitle="Contact Me"></nz-link> -->
+      <a href="javascript:void(0)" (click)="scrollToAnchroingPosition('contact')">Contact Me</a>
+    </div>
+    <nz-anchor nzOffsetTop="100">
     </nz-anchor>
   </nz-sider>
 
-
-
 </nz-layout>
+
+
+<svg width="0" height="0">
+  <defs>
+      <clipPath id="blob-clip-path" clipPathUnits="objectBoundingBox">
+          <path d="M0.4,0.08 C0.56,0.04 0.68,0.16 0.72,0.32 C0.76,0.48 0.64,0.6 0.56,0.72 C0.48,0.84 0.44,0.96 0.32,1 C0.2,1.04 0.04,0.96 0.04,0.84 C0,0.72 0.12,0.56 0.16,0.4 C0.2,0.24 0.12,0.08 0.4,0.08Z" />
+      </clipPath>
+  </defs>
+</svg>

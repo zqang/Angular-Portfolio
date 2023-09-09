@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class SectionTitleLayoutComponent implements OnInit {
 
   @Input() title = '';
+  @Input() description = '';
 
   constructor() { }
 

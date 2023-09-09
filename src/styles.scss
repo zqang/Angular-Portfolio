@@ -1,13 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
 @import "/src/assets/styles/global/background/background.scss";
-@import "/src/assets/styles/global/font/font.scss";
+// @import "/src/assets/styles/global/font/font.scss";
 
-
-*{
-  font-family: Arial, Helvetica, sans-serif;
-  // font-size: 16px;
+html {
+  // font-size: min(max(1rem, 4vw), 22px);
+  // font-size: clamp(100%, 1rem + 2vw, 24px) ;
+  scroll-behavior: smooth;
+  // scroll-padding-top: 100px;
 }
 
+// *{
+//   // font-family: Arial, Helvetica, sans-serif;
+
+// }
+
+h1 {
+  font-size: min(max(3rem, 5.5vw), 70px);
+}
+
+h2 {
+  font-size: min(max(2.5rem, 4.5vw), 60px);
+}
+
+h3 {
+  font-size: min(max(2.0rem, 3.5vw), 50px);
+}
+
+h4 {
+  font-size: min(max(1.5rem, 3.0vw), 40px);
+}
+
+h5 {
+  font-size: min(max(1.0rem, 2.5vw), 30px);
+}
+
+p , span, label, .default-font{
+  font-size: min(max(1.0rem, 2vw), 20px);
+}
+
+.header-font {
+  font-size: min(max(1.25rem, 2.6vw), 34px);
+}
+
+.secondary-font {
+  font-size: min(max(0.75rem, 1.7vw), 18px);
+}
+
+.tertiary-font, a, caption{
+  font-size: min(max(0.5rem, 1.25vw), 16px);
+}
 
 div.ant-card-head-title{
   font-size: 20px;

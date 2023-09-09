@@ -24,6 +24,7 @@ import { BlogState } from './core/store/state/blog.state';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { PortfolioState } from './core/store/state/portfolio.state';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 registerLocaleData(en);
 
@@ -56,6 +57,7 @@ export function tokenGetter() {
         disallowedRoutes: []
       }
     }),
+    FontAwesomeModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }, PathResolveService, AuthGuard],
   bootstrap: [AppComponent]
