@@ -79,9 +79,9 @@ todo
 - responsive design, redesign the portfolio ui
 - deploy to online with setup record inside blog
 - do note on az-104
-- set the contact me link only include github, whatsapp, gmail
-- set the contact me as button below the summary section
+- set the contact me link include github, whatsapp icon in footer or vertical
 - about me add more detail and image
 - tech stack reorganize the layout
 - blob shape more verbose
+- set dark mode and light mode
 
