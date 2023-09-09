@@ -1,9 +1,11 @@
 html{
   font-size: 12px;
+  background-color: #f3f3f3;
 }
 
 .layout{
   min-height: 100vh;
+  background-color: #f3f3f3;
 }
 
 nz-content {
@@ -11,7 +13,6 @@ nz-content {
 }
 
 .inner-content {
-  background: #fff;
   // margin-top: 64px;
   // padding: 24px;
   min-height: 380px;

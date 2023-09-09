@@ -6,6 +6,7 @@ html {
   // font-size: min(max(1rem, 4vw), 22px);
   // font-size: clamp(100%, 1rem + 2vw, 24px) ;
   scroll-behavior: smooth;
+  background-color: #f3f3f3;
   // scroll-padding-top: 100px;
 }
 
@@ -60,39 +61,4 @@ ul.ant-timeline.ant-timeline.label.ant-timeline-alternate{
 
 li.ant-timeline-item{
   height: 130px;
-}
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  *{
-    // font-size: 10px;
-  }
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-  *{
-    // font-size: 12px;
-  }
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-  *{
-    // font-size: 14px;
-  }
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-  *{
-    // font-size: 16px;
-  }
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-  *{
-    // font-size: 18px;
-  }
 }

@@ -8,6 +8,7 @@ import { faHtml5, faCss3, faSquareJs, faReact, faAngular, faMicrosoft, faJira, f
 })
 export class TechStackComponent implements OnInit {
   title = "Tech Stack"
+  layoutStyle= "background-color: #acb1d6;"
 
   constructor() { }
 

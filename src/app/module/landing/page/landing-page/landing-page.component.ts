@@ -21,7 +21,7 @@ export class LandingPageComponent implements OnInit {
   }
 
   public scrollToAnchroingPosition(elementId: string): void {
-    this.viewportScroller.setOffset([0, 100]);
+    // this.viewportScroller.setOffset([0, 100]);
     this.viewportScroller.scrollToAnchor(elementId);
   }
 

@@ -9,6 +9,7 @@ export class SectionTitleLayoutComponent implements OnInit {
 
   @Input() title = '';
   @Input() description = '';
+  @Input() inputStyle = '';
 
   constructor() { }
 

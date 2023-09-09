@@ -16,13 +16,26 @@
     </div>
   </div>
 </section>
-<nz-layout>
-
+<!-- <nz-layout> -->
+<div class="landing-layout">
   <nz-content>
-
-
-
-    <div id="about" class="section">
+    <div class="anchor-group">
+      <div class="link-group">
+        <a class="secondary-font" href="javascript:void(0)" (click)="scrollToAnchroingPosition('summary')">
+          <span nz-icon nzType="double-right" nzTheme="outline"></span>Home
+        </a>
+        <a class="secondary-font" href="javascript:void(0)" (click)="scrollToAnchroingPosition('about')">
+          <span nz-icon nzType="double-right" nzTheme="outline"></span>About Me
+        </a>
+        <a class="secondary-font" href="javascript:void(0)" (click)="scrollToAnchroingPosition('tech-stack')">
+          <span nz-icon nzType="double-right" nzTheme="outline"></span>Tech Stack
+        </a>
+        <a class="secondary-font" href="javascript:void(0)" (click)="scrollToAnchroingPosition('contact')">
+          <span nz-icon nzType="double-right" nzTheme="outline"></span>Contact Me
+        </a>
+      </div>
+    </div>
+    <div id="about" class="section about-section">
       <app-about-me></app-about-me>
     </div>
 
@@ -55,25 +68,24 @@
 
   <nz-sider nzWidth="200" *matches="'bigDevice'">
     <!-- <nz-link class="tertiary-font" nzHref="#summary" nzTitle="Home"></nz-link> -->
-    <div class="link-group">
-      <a href="javascript:void(0)" (click)="scrollToAnchroingPosition('summary')">Home</a>
+
       <!-- <nz-link nzHref="#about" nzTitle="About Me"></nz-link> -->
-      <a href="javascript:void(0)" (click)="scrollToAnchroingPosition('about')">About Me</a>
+
       <!-- <nz-link nzHref="#skill" nzTitle="Skills"></nz-link> -->
       <!-- <a href="javascript:void(0)" (click)="scrollToAnchroingPosition('skill')">Skills</a> -->
-      <a href="javascript:void(0)" (click)="scrollToAnchroingPosition('tech-stack')">Tech Stack</a>
+
       <!-- <nz-link nzHref="#qualification" nzTitle="Qualifications"></nz-link> -->
       <!-- <a href="javascript:void(0)" (click)="scrollToAnchroingPosition('qualification')">Qualifications</a> -->
       <!-- <nz-link nzHref="#portfolio" nzTitle="Portfolio"></nz-link> -->
       <!-- <nz-link nzHref="#blog" nzTitle="Blog"></nz-link> -->
       <!-- <nz-link nzHref="#contact" nzTitle="Contact Me"></nz-link> -->
-      <a href="javascript:void(0)" (click)="scrollToAnchroingPosition('contact')">Contact Me</a>
-    </div>
     <nz-anchor nzOffsetTop="100">
     </nz-anchor>
   </nz-sider>
 
-</nz-layout>
+</div>
+
+<!-- </nz-layout> -->
 
 
 <svg width="0" height="0">

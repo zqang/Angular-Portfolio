@@ -1,0 +1,23 @@
+.tech-stack-icon-group{
+  background-color: #f3f3f3;
+  border-radius: 20%;
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  .subgroup{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+
+    img{
+      width: 6vw;
+    }
+  }
+}

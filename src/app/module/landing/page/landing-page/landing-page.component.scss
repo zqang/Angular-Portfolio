@@ -7,43 +7,52 @@
     }
 }
 
-
-
-nz-sider {
-
-  background: white;
-  color: black;
-  line-height: 12px;
-  font-size: 20px !important;
-
-  .link-group {
-    position: sticky;
-    // z-index: 1;
-    top: 100px;
-    right: 0;
-    overflow: auto;
-    height: auto;
-    width: 10vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-
-    a {
-      padding: 10px 0;
-      text-decoration: underline;
-      font-style: italic;
-      color: black;
-      cursor: pointer;
-      font-weight: 600;
-    }
-  }
-
-
+.section {
+  height: 100vh;
+  width: 100%;
+  // display: grid;
+  // place-content: center;
 }
+
 
 nz-content{
   padding: 10px 0;
-  background: white;
+  background-color: #f3f3f3;
+
+  .anchor-group {
+    background-color: transparent;
+    color: black;
+    line-height: 12px;
+    font-size: 20px !important;
+
+    .link-group {
+      position: fixed;
+      z-index: 100;
+      top:0;
+      right: 0;
+      overflow: auto;
+      height: 64px;
+      width: auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: end;
+      gap: 1.5vw;
+      margin-right: 1.5vw;
+
+      a {
+        padding: 0 20px;
+        text-decoration: underline;
+        font-style: italic;
+        color: #5f4949;
+        cursor: pointer;
+        font-weight: 900;
+      }
+    }
+
+
+  }
+
 }
 
 .top-view {
@@ -57,6 +66,7 @@ nz-content{
   justify-content: center;
   position: relative;
   overflow: hidden;
+  background-color: #ebebeb;
 
   .flex-summary{
     display: flex;
