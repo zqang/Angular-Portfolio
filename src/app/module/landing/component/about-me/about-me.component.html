@@ -1,4 +1,6 @@
 <app-section-title-layout [title]="title" [description]="description">
-  <div nz-col  class="about-me-image-section" >
+  <div nz-col *matches="'bigDevice'"  class="about-me-image-section" >
+  </div>
+  <div nz-col *matches="'mobile'"  class="about-me-image-mobile-section" >
   </div>
 </app-section-title-layout>

@@ -3,7 +3,7 @@
     <button (click)="onNavigate()" nz-button nzSize="large" nzShape="round" nzType="primary">Add new blog</button>
   </div>
 
-  <nz-table #basicTable *ngIf="blogPosts$ | async as blog">
+  <nz-table #basicTable [nzScroll]="{ x: '900px' }" *ngIf="blogPosts$ | async as blog">
     <thead>
       <tr>
         <th>Id</th>

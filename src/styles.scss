@@ -39,6 +39,10 @@ p , span, label, .default-font{
   font-size: min(max(1.0rem, 2vw), 20px);
 }
 
+button span {
+  font-size: 14px;
+}
+
 .header-font {
   font-size: min(max(1.25rem, 2.6vw), 34px);
 }
@@ -48,7 +52,7 @@ p , span, label, .default-font{
 }
 
 .tertiary-font, a, caption{
-  font-size: min(max(0.5rem, 1.25vw), 16px);
+  font-size: min(max(0.75rem, 1.25vw), 16px);
 }
 
 div.ant-card-head-title{

@@ -19,7 +19,7 @@
 <!-- <nz-layout> -->
 <div class="landing-layout">
   <nz-content>
-    <div class="anchor-group">
+    <div *matches="'bigDevice'" class="anchor-group">
       <div class="link-group">
         <a class="secondary-font" href="javascript:void(0)" (click)="scrollToAnchroingPosition('summary')">
           <span nz-icon nzType="double-right" nzTheme="outline"></span>Home

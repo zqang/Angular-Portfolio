@@ -3,7 +3,7 @@
     <button (click)="onNavigate()" nz-button nzSize="large" nzShape="round" nzType="primary">Add new portfolio</button>
   </div>
 
-  <nz-table #portfolioTable *ngIf="portfolios$ | async as portfolio">
+  <nz-table #portfolioTable [nzScroll]="{ x: '900px' }" *ngIf="portfolios$ | async as portfolio">
     <thead>
       <tr>
         <th>Id</th>

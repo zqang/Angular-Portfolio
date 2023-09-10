@@ -11,12 +11,32 @@ nz-sider{
 }
 
 nz-content {
-  margin: 24px 16px 0;
+
+  background: #f3f3f3;
+  .inner-content {
+    margin-top: 64px;
+    padding: 24px;
+    min-height: 360px;
+  }
 }
 
-.inner-content {
-  padding: 24px;
-  background: #f3f3f3;
-  min-height: 360px;
+.menu-list{
+  list-style: none;
+  background-color: transparent;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  margin-top: 64px;
+
+  li{
+    font-weight: 900;
+
+    a {
+      color: #5f4949;
+    }
+  }
 }
+
 

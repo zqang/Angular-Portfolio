@@ -1,7 +1,11 @@
 <section  class="section-layout" [style]="inputStyle">
-  <div nz-col nzXs="24" nzSm="24" nzMd="10" nzLg="10" nzXl="10">
+  <div *matches="'bigDevice'" nz-col nzXs="24" nzSm="24" nzMd="10" nzLg="10" nzXl="10">
     <h2 class="title-font">{{title}}</h2>
     <span class="default-font description">{{description}}</span>
+  </div>
+  <div *matches="'mobile'" >
+    <h2 class="title-font">{{title}}</h2>
+    <span class="default-font">{{description}}</span>
   </div>
   <ng-content></ng-content>
 </section>
