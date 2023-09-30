@@ -2,11 +2,17 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+// export const environment = {
+//   production: false,
+//   BACKEND_URL: 'https://localhost:44305/api',
+//   JWT_ALLOWED_DOMAIN: 'localhost:44305'
+// };
+
 export const environment = {
   production: false,
-  BACKEND_URL: 'https://localhost:44305/api',
-  JWT_ALLOWED_DOMAIN: 'localhost:44305'
-};
+  BACKEND_URL: 'https://portfolioapi2023.azurewebsites.net/api',
+  JWT_ALLOWED_DOMAIN: 'portfolioapi2023.azurewebsites.net'
+}
 
 /*
  * For easier debugging in development mode, you can import the following file
