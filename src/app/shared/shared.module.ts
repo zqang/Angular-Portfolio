@@ -1,16 +1,15 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ZorroModule } from './zorro.module';
 import { RouterModule } from '@angular/router';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { AnchorComponent } from './component/anchor/anchor.component';
-import { MatchesDirective } from './directive/match.directive';
+import { CkeeditorComponent } from './component/ckeeditor/ckeeditor.component';
 import { ContactComponent } from './component/contact/contact.component';
 import { LoadingSpinnerComponent } from './component/loading-spinner/loading-spinner.component';
-import { CkeeditorComponent } from './component/ckeeditor/ckeeditor.component';
-import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
-
-
+import { TagComponent } from './component/tag/tag.component';
+import { MatchesDirective } from './directive/match.directive';
+import { ZorroModule } from './zorro.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +17,8 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     MatchesDirective,
     ContactComponent,
     LoadingSpinnerComponent,
-    CkeeditorComponent
+    CkeeditorComponent,
+    TagComponent,
   ],
   imports: [
     CommonModule,
@@ -38,7 +38,8 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     MatchesDirective,
     ContactComponent,
     LoadingSpinnerComponent,
-    CkeeditorComponent
-  ]
+    CkeeditorComponent,
+    TagComponent,
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}

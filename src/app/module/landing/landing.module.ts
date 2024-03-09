@@ -11,6 +11,8 @@ import { QualificationsComponent } from './component/qualifications/qualificatio
 import { BriefPortfolioComponent } from './component/brief-portfolio/brief-portfolio.component';
 import { BlogSummaryComponent } from './component/blog-summary/blog-summary.component';
 import { TechStackComponent } from './component/tech-stack/tech-stack.component';
+import { NewAboutMeComponent } from './component/new-about-me/new-about-me.component';
+import { NewTechStackComponent } from './component/new-tech-stack/new-tech-stack.component';
 
 
 
@@ -26,6 +28,8 @@ import { TechStackComponent } from './component/tech-stack/tech-stack.component'
     BriefPortfolioComponent,
     BlogSummaryComponent,
     TechStackComponent,
+    NewAboutMeComponent,
+    NewTechStackComponent,
   ],
   imports: [
     SharedModule,

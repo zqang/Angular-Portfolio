@@ -1,7 +1,14 @@
 <nz-back-top></nz-back-top>
 <section id="summary" class="top-section top-view" *matches="'bigDevice'">
   <div nz-row class="flex-summary">
-    <div nz-col class="image"><img class="profile-pic" nz-image [nzSrc]="src" [nzPlaceholder]="placeholder"></div>
+    <div nz-col class="image">
+      <img
+        class="profile-pic"
+        nz-image
+        [nzSrc]="src"
+        [nzPlaceholder]="placeholder"
+      />
+    </div>
     <div nz-col nzOffset="2" nzXs="22" nzSm="20" nzMd="18" nzLg="16" nzXl="16">
       <app-career-summary></app-career-summary>
     </div>
@@ -10,7 +17,14 @@
 
 <section id="summary" class="top-section top-view" *matches="'mobile'">
   <div nz-col class="flex-summary-mobile">
-    <div nz-row class="image"><img class="profile-pic" nz-image [nzSrc]="src" [nzPlaceholder]="placeholder"></div>
+    <div nz-row class="image">
+      <img
+        class="profile-pic"
+        nz-image
+        [nzSrc]="src"
+        [nzPlaceholder]="placeholder"
+      />
+    </div>
     <div nz-row>
       <app-career-summary></app-career-summary>
     </div>
@@ -21,32 +35,51 @@
   <nz-content>
     <div *matches="'bigDevice'" class="anchor-group">
       <div class="link-group">
-        <a class="secondary-font" href="javascript:void(0)" (click)="scrollToAnchroingPosition('summary')">
+        <a
+          class="secondary-font"
+          href="javascript:void(0)"
+          (click)="scrollToAnchroingPosition('summary')"
+        >
           <span nz-icon nzType="double-right" nzTheme="outline"></span>Home
         </a>
-        <a class="secondary-font" href="javascript:void(0)" (click)="scrollToAnchroingPosition('about')">
+        <a
+          class="secondary-font"
+          href="javascript:void(0)"
+          (click)="scrollToAnchroingPosition('about')"
+        >
           <span nz-icon nzType="double-right" nzTheme="outline"></span>About Me
         </a>
-        <a class="secondary-font" href="javascript:void(0)" (click)="scrollToAnchroingPosition('tech-stack')">
-          <span nz-icon nzType="double-right" nzTheme="outline"></span>Tech Stack
+        <a
+          class="secondary-font"
+          href="javascript:void(0)"
+          (click)="scrollToAnchroingPosition('tech-stack')"
+        >
+          <span nz-icon nzType="double-right" nzTheme="outline"></span>Tech
+          Stack
         </a>
         <!-- <a class="secondary-font" href="javascript:void(0)" (click)="scrollToAnchroingPosition('contact')">
           <span nz-icon nzType="double-right" nzTheme="outline"></span>Contact Me
         </a> -->
       </div>
     </div>
-    <div id="about" class="section about-section">
+    <!-- <div id="about" class="section about-section">
       <app-about-me></app-about-me>
+    </div> -->
+
+    <div id="about" class="new-tech-stack">
+      <app-new-about-me></app-new-about-me>
     </div>
 
     <!-- <div id="skill" class="section">
       <app-skills></app-skills>
     </div> -->
 
-    <div id="tech-stack" class="section">
+    <!-- <div id="tech-stack" class="section">
       <app-tech-stack></app-tech-stack>
+    </div> -->
+    <div id="tech-stack" class="new-tech-stack">
+      <app-new-tech-stack></app-new-tech-stack>
     </div>
-
     <!-- <div id="qualification" class="section">
       <app-qualifications></app-qualifications>
     </div> -->
@@ -62,36 +95,33 @@
     <!-- <section id="contact" >
       <app-contact [isLanding]="true"></app-contact>
     </section> -->
-
   </nz-content>
-
 
   <nz-sider nzWidth="200" *matches="'bigDevice'">
     <!-- <nz-link class="tertiary-font" nzHref="#summary" nzTitle="Home"></nz-link> -->
 
-      <!-- <nz-link nzHref="#about" nzTitle="About Me"></nz-link> -->
+    <!-- <nz-link nzHref="#about" nzTitle="About Me"></nz-link> -->
 
-      <!-- <nz-link nzHref="#skill" nzTitle="Skills"></nz-link> -->
-      <!-- <a href="javascript:void(0)" (click)="scrollToAnchroingPosition('skill')">Skills</a> -->
+    <!-- <nz-link nzHref="#skill" nzTitle="Skills"></nz-link> -->
+    <!-- <a href="javascript:void(0)" (click)="scrollToAnchroingPosition('skill')">Skills</a> -->
 
-      <!-- <nz-link nzHref="#qualification" nzTitle="Qualifications"></nz-link> -->
-      <!-- <a href="javascript:void(0)" (click)="scrollToAnchroingPosition('qualification')">Qualifications</a> -->
-      <!-- <nz-link nzHref="#portfolio" nzTitle="Portfolio"></nz-link> -->
-      <!-- <nz-link nzHref="#blog" nzTitle="Blog"></nz-link> -->
-      <!-- <nz-link nzHref="#contact" nzTitle="Contact Me"></nz-link> -->
-    <nz-anchor nzOffsetTop="100">
-    </nz-anchor>
+    <!-- <nz-link nzHref="#qualification" nzTitle="Qualifications"></nz-link> -->
+    <!-- <a href="javascript:void(0)" (click)="scrollToAnchroingPosition('qualification')">Qualifications</a> -->
+    <!-- <nz-link nzHref="#portfolio" nzTitle="Portfolio"></nz-link> -->
+    <!-- <nz-link nzHref="#blog" nzTitle="Blog"></nz-link> -->
+    <!-- <nz-link nzHref="#contact" nzTitle="Contact Me"></nz-link> -->
+    <nz-anchor nzOffsetTop="100"> </nz-anchor>
   </nz-sider>
-
 </div>
 
 <!-- </nz-layout> -->
 
-
 <svg width="0" height="0">
   <defs>
-      <clipPath id="blob-clip-path" clipPathUnits="objectBoundingBox">
-          <path d="M0.4,0.08 C0.56,0.04 0.68,0.16 0.72,0.32 C0.76,0.48 0.64,0.6 0.56,0.72 C0.48,0.84 0.44,0.96 0.32,1 C0.2,1.04 0.04,0.96 0.04,0.84 C0,0.72 0.12,0.56 0.16,0.4 C0.2,0.24 0.12,0.08 0.4,0.08Z" />
-      </clipPath>
+    <clipPath id="blob-clip-path" clipPathUnits="objectBoundingBox">
+      <path
+        d="M0.4,0.08 C0.56,0.04 0.68,0.16 0.72,0.32 C0.76,0.48 0.64,0.6 0.56,0.72 C0.48,0.84 0.44,0.96 0.32,1 C0.2,1.04 0.04,0.96 0.04,0.84 C0,0.72 0.12,0.56 0.16,0.4 C0.2,0.24 0.12,0.08 0.4,0.08Z"
+      />
+    </clipPath>
   </defs>
 </svg>
