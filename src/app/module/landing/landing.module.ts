@@ -13,6 +13,7 @@ import { BlogSummaryComponent } from './component/blog-summary/blog-summary.comp
 import { TechStackComponent } from './component/tech-stack/tech-stack.component';
 import { NewAboutMeComponent } from './component/new-about-me/new-about-me.component';
 import { NewTechStackComponent } from './component/new-tech-stack/new-tech-stack.component';
+import { NewContactDetailComponent } from './component/new-contact-detail/new-contact-detail.component';
 
 
 
@@ -30,6 +31,7 @@ import { NewTechStackComponent } from './component/new-tech-stack/new-tech-stack
     TechStackComponent,
     NewAboutMeComponent,
     NewTechStackComponent,
+    NewContactDetailComponent,
   ],
   imports: [
     SharedModule,

@@ -1,0 +1,29 @@
+<div class="profile-card">
+  <div class="close-button">
+    <span
+      nz-icon
+      nzType="close"
+      nzTheme="outline"
+      (click)="closeContactFormModal()"
+    ></span>
+  </div>
+
+  <div class="avatar">
+    <img class="avatar-img" src="./assets/fbprofilepic.jpg" alt="avatar" />
+  </div>
+  <div class="info">
+    <h2>Alvin Ang Zee Qin</h2>
+    <h4>Malaysia & Singapore</h4>
+    <div class="phone">
+      <p>+60 1162548957</p>
+      ||
+      <p>+65 90433759</p>
+    </div>
+  </div>
+  <p class="bio">"Full Stack Developer."</p>
+  <div class="social-links">
+    <a *ngFor="let contact of contacts" href="contact.value">{{
+      contact.name
+    }}</a>
+  </div>
+</div>
